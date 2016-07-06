@@ -1,0 +1,35 @@
+<html ng-app="myApp">
+   <head>
+      <title>Angular JS Forms</title>
+      <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+   </head>
+   <body>   
+      <form ng-submit="submit()" name="form" ng-controller="MyController" novalidate>
+            <div ng-show="form.$pristine">Form input has not yet started</div>
+	        <div ng-show="form.$dirty">Form input has started</div>
+            
+            <div>
+                <input type="email" name="email" ng-model="email" required />
+                <span style = "color:red" ng-show = "(submitted && form.email.$dirty) && form.email.$invalid">
+                        <span ng-show = "form.email.$error.required">Email is required.</span>
+                        <span ng-show = "form.email.$error.email">Invalid email address.</span>
+                     </span>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <script>
+            var myApp = angular.module('myApp',[]);
+            myApp.controller('MyController',function($scope){
+                $scope.submit = function()
+                            {
+                                // Set the 'submitted' flag to true
+                                $scope.submitted = true;
+                                // Send the form to server
+                                // $http.post ...
+                            } 
+                });
+        </script>
+   </body>
+</html>

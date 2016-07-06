@@ -1,0 +1,26 @@
+
+<!DOCKTYPE html>
+<html>
+	<head>
+		<title>
+			Javascript way of event handling!
+		</title>
+	</head>
+	<body>      
+        <button onclick="displayMsg()">Obtrusive JS!</button>
+        <button id='btn1'>Unobtrusive JS!</button> 
+        <script>
+            function displayMsg()
+            {
+                alert("Clicked!");
+            }
+            var btn = document.getElementById('btn1');
+
+            //// unobtrusive javascript with onclick
+            //btn.onclick = displayMsg;
+
+            // unobtrusive javascript with addEventListener
+            btn.addEventListener('click',displayMsg);
+        </script>        	   
+	</body>
+</html>

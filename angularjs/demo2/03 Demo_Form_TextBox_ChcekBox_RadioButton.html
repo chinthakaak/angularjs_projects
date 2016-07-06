@@ -1,0 +1,91 @@
+
+<!DOCKTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<title>
+			AngularJS Event Handling!
+		</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	</head>
+	<body>      
+        <div ng-controller="MyController">
+            First Name:- 
+            <input type="text" ng-model="myForm.firstName"/> <br/>
+            Last Name:- 
+            <input type="text" ng-model="myForm.lastName"/> <br/>
+            {{myForm.firstName}}<br/>
+            {{myForm.lastName}}<br/>
+            
+            <!--NewsLetter:- 
+            <input type="checkbox" 
+            ng-model="myForm.wantNewsLetter"/>-->
+            <!--Customizing values-->
+            NewsLetter:- 
+            <input type="checkbox" 
+            ng-model="myForm.wantNewsLetter"
+            ng-true-value="'YES'" ng-false-value="'NO'"/>
+            {{myForm.wantNewsLetter}} <br/>
+            
+            Weekly:- <input type="radio" 
+            ng-model="myForm.whichNewsLetter"
+            value="weeklyNews"><br/>    
+            Monthly:- <input type="radio" 
+            ng-model="myForm.whichNewsLetter" 
+            value="monthlyNews"> <br/>
+
+        <!--Cars:- <select ng-model="myForm.car"
+            ng-options="option.name for option in myForm.options"> 
+            </select>
+            <h1>{{myForm.car.id}}</h1>-->
+
+            <!--Empty option selecting name showing id-->
+            <!--Cars:- <select ng-model="myForm.car" 
+            ng-options="obj.id as obj.name for obj in myForm.options">
+                    <option value="">Please choose a car</option> 
+            </select>
+                    <h1>{{myForm.car}}</h1>-->
+
+            <!--Multiple options selecting id showing name-->
+            <select multiple="true" ng-model="myForm.car"
+                ng-options="obj.id as obj.name for obj in myForm.options">
+            </select>
+            <h1>{{myForm.car}}</h1>
+        </div> 
+        <br/><br/>
+        <div ng-controller="CountController">
+            <button ng-click="setCount()">Set Count to Three!</button>
+            <!--Setting property in expression!-->
+            <button ng-click="count=5">Set Count to Five!</button>
+            <h1>{{count}}</h1>
+        </div>
+        <script>    
+
+    var myApp = angular.module('myApp',[]);
+    myApp.controller('MyController',function($scope)
+    {
+        $scope.myForm = {};
+        $scope.myForm.firstName= "Sachin";
+        $scope.myForm.lastName= "Tendulkar";
+        // Binding CheckBoxes
+        $scope.myForm.wantNewsLetter = true;
+        // Binding RadioButtons
+        $scope.myForm.whichNewsLetter = "weeklyNews";
+
+        // ng-options
+        $scope.myForm.options = [ 
+			{ id : "nissan", name: "Nissan" } ,
+			{ id : "toyota", name: "Toyota" } ,
+		    { id : "fiat" , name: "Fiat" } 
+        ];
+
+    });
+    myApp.controller('CountController',function($scope)
+    {
+        $scope.setCount = function()
+        {
+            $scope.count = 3;
+        }
+    });
+        </script>        	   
+	</body>
+</html>

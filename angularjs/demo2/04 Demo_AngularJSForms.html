@@ -1,0 +1,127 @@
+<html>
+   <head>
+      <title>Angular JS Forms</title>
+      <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+      
+      <style>
+            input.ng-pristine {
+                background-color: skyblue;
+            }
+
+            input.ng-dirty.ng-touched {
+                background-color: yellow;
+            }       
+
+            input.ng-invalid 
+                {
+                        color:red;                        
+                        font-size:large;
+                }
+            input.ng-valid
+                 {
+                        color:green;
+                        font-size:large;
+                   }
+
+             table, th , td {
+                border: 1px solid grey;
+                border-collapse: collapse;
+                padding: 5px;
+             }
+         
+             table tr:nth-child(odd) {
+                background-color: #f2f2f2;
+             }
+         
+             table tr:nth-child(even) {
+                background-color: #ffffff;
+             }
+         </style>
+
+   </head>
+   <body>
+      
+      <h2>AngularJS Sample Application</h2>
+      <div ng-app = "mainApp" ng-controller = "studentController">
+            <div ng-show="studentForm.$pristine">
+                Form input has not yet started</div>
+		    <div ng-show="studentForm.$dirty">
+                Form input has started</div>     
+         <form name = "studentForm" novalidate action="https://www.google.co.in">
+            <table border = "0">
+               <tr>
+                  <td>Enter first name:</td>
+                  <td><input name = "firstname" type = "text" ng-model = "firstName" placeholder="Enter First Name!" required>
+                     <span style = "color:red" ng-show = "studentForm.firstname.$dirty && studentForm.firstname.$invalid">
+                        <span ng-show = "studentForm.firstname.$error.required">First Name is required.</span>
+                     </span>
+                  </td>
+               </tr>
+               
+               <tr>
+                  <td>Enter last name: </td>
+                  <td><input name = "lastname"  type = "text" ng-model = "lastName" placeholder="Enter Last Name!" ng-required="true">
+                     <span style = "color:red" ng-show = "studentForm.lastname.$dirty && studentForm.lastname.$invalid">
+                        <span ng-show = "studentForm.lastname.$error.required">Last Name is required.</span>
+                     </span>
+                  </td>
+               </tr>
+               
+               <tr>
+                  <td>Email: </td><td><input name = "email" type = "email" ng-model = "email" placeholder="Enter Your Email!" length = "100" required>
+                     <span style = "color:red" ng-show = "studentForm.email.$dirty && studentForm.email.$invalid">
+                        <span ng-show = "studentForm.email.$error.required">Email is required.</span>
+                        <span ng-show = "studentForm.email.$error.email">Invalid email address.</span>
+                     </span>
+                  </td>
+               </tr>
+               
+                <tr>
+                    <td>Contact No: </td>
+                    <td>
+                        <input name="contactno" type="text" ng-model="contactNo" placeholder="Enter Contact No"
+                         ng-pattern="/^[789]\d{9}$/" maxlength="10" ng-required="true">
+                        <span style="color:red" ng-show="studentForm.contactno.$dirty && studentForm.contactno.$invalid">
+                            <span ng-show="studentForm.contactno.$error.required">Contact No is required.</span>
+                            <span ng-show="studentForm.contactno.$error.pattern">Invalid Contact No.</span>
+                        </span>
+                    </td>
+                </tr>
+                                
+               <tr>
+                  <td>
+                     <button type="button" ng-click = "reset()">Reset</button>
+                  </td>
+                  <td>
+                     <button ng-disabled = 
+                             "studentForm.firstname.$dirty && studentForm.firstname.$invalid || 
+                              studentForm.lastname.$dirty &&  studentForm.lastname.$invalid || 
+                             studentForm.email.$dirty && studentForm.email.$invalid ||
+                             studentForm.contactno.$dirty && studentForm.contactno.$invalid" ng-click="submit()">Submit</button>
+                  </td>
+               </tr>					
+            </table>
+         </form>
+         <div ng-show="studentForm.$dirty && studentForm.$valid">
+				<br/>Thank you for taking time to enter Student Information!
+			</div>
+      </div>
+      
+      <script>
+         var mainApp = angular.module("mainApp", []);
+         
+         mainApp.controller('studentController', function ($scope) {
+
+            $scope.reset = function(){
+               $scope.firstName = "Abhijeet";
+               $scope.lastName = "Gole";
+               $scope.email = "abhijeet@debellate.com";
+               $scope.contactNo = 9988776655;
+            }
+            
+            $scope.reset();
+         });
+      </script>
+      
+   </body>
+</html>

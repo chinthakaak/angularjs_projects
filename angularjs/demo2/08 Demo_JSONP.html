@@ -1,0 +1,36 @@
+<!Doctype html>
+<html>
+<head>
+    <title>AngularJS $http.jsonp() service example</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script>
+        var app = angular.module('myServiceApp', []);
+        app.controller('MyServiceCtrl', function ($scope, $http) {
+            $scope.doJSONPRequest = function () {
+                //   var url = "http://localhost:9876/endpoint";
+                //   $http.get(url)
+                 var url = "http://localhost:9876/endpoint?callback=JSON_CALLBACK";
+                 $http.jsonp(url)
+                .success(function (data, status, headers, config) {
+                    // $scope.details = JSON.stringify(data);
+					$scope.details = data;
+                    $scope.statcode = status;
+                })
+                .error(function (data, status, headers, config) {
+                    $scope.statcode = status;
+                });
+            }
+        });
+    </script>
+</head>
+<body ng-app="myServiceApp">
+    <h2>AngularJS Http Jsonp Service Example</h2>
+    <div ng-controller="MyServiceCtrl">
+        <h3>Processing $http.jsonp() response in service</h3>
+        <button ng-click="doJSONPRequest()">JSONP request</button>
+        <p>Data Details: {{details}}</p>
+        <h1>{{details.title}}</h1>
+		<h1>{{details.data}}</h1>
+    </div>
+</body>
+</html>

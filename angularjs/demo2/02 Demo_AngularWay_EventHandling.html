@@ -1,0 +1,43 @@
+
+<!DOCKTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<title>
+			AngularJS Event Handling!
+		</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	</head>
+	<body>      
+        <div ng-controller="MyController" 
+            ng-mouseover="myData.getPointsII($event)"
+            style="width:300px;height:100px;background-color:peachpuff;" >        
+            <button ng-click="myData.doClick()">
+                Click Here!</button>
+            <button ng-click="myData.getPoints($event)">
+                get X and Y!</button>
+            <h2>Mouse move at:{{X}},{{Y}}</h2> 
+        </div>
+        <script>    
+    var myApp = angular.module('myApp',[]);
+    myApp.controller('MyController',function($scope)
+    {
+        $scope.myData = {};
+        $scope.myData.doClick = function()
+            {
+                alert('Clicked!');
+            }
+        $scope.myData.getPoints = function(evt)
+            {
+                alert(evt.clientX+" "+evt.clientY);
+                alert(evt.target);
+            }   
+            
+        $scope.myData.getPointsII = function(evt)
+            {
+                $scope.X = evt.clientX;
+                $scope.Y = evt.clientY;
+            }                
+    });
+        </script>        	   
+	</body>
+</html>
