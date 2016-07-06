@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html ng-app>
+<head>
+	<title>Data Binding - Two way</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+</head>
+<body>
+<!-- ng-bind is one way because it binds model to view only -->
+	Your name is <span ng-bind="name"></span><br/>
+	
+	<br/>
+	<input type="text" ng-model="name"/>
+</body>
+</html>
