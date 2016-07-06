@@ -1,0 +1,25 @@
+
+<!DOCKTYPE html>
+<html>
+	<head>
+		<title>
+			Using Javascript!
+		</title>
+	</head>
+	<body>
+	   <br/>City:- <input type="text" id="txtCity"/><br/>
+		Your City is <span style="font-size:x-large;font-weight:bolder;" id="spanCity"></span>
+        <script>
+            function $(id)
+            {
+                return document.getElementById(id);
+            }
+            $('txtCity').addEventListener('keyup',function()
+            {
+                var spanCity = $('spanCity');
+                var txtBox = $('txtCity');
+                spanCity.innerHTML = txtBox.value; // innerText is not supported in firefox
+            });
+        </script>
+	</body>
+</html>

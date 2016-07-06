@@ -1,0 +1,25 @@
+
+<!DOCKTYPE html>
+<html ng-app>
+	<head>
+		<title>
+			Using jQuery!
+		</title>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	</head>
+	<body>
+	   <br/>City:- <input type="text" id="txtCity"/><br/>
+		Your City is <span style="font-size:x-large;font-weight:bolder;" id="spanCity"></span>
+        <script>
+          $(document).ready(function() 
+            {                
+                $('#txtCity').keyup(
+                    function()
+                        {
+                            $('#spanCity').text($('#txtCity').val());
+                        })         
+            });
+            
+        </script>
+	</body>
+</html>

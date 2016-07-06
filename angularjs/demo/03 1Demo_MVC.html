@@ -1,0 +1,41 @@
+
+<!DOCKTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<title>
+			Using AngularJS Data Binding!
+		</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	</head>
+	<body>
+        <!--View-->
+        <div ng-controller="MyController"> 
+            <br/>City:- <input type="text" ng-model="city"/><br/>
+		    Your City is <span style="font-size:x-large;font-weight:bolder;" ng-bind="city" ></span><br/>
+            Your City is {{city}}
+
+            <br/><br/>
+            <p ng-repeat="person in ourPeople">
+                {{person.firstName}}  {{person.lastName}}
+            </p>
+            
+        </div>
+        <script>
+    // namespace or package
+    var myApp = angular.module('myApp',[]);
+
+    // controller
+    myApp.controller('MyController',function($scope)// inject that - DI
+    {
+        $scope.city = "Pune"; // model
+
+        var people = [
+            {firstName:'Sachin',lastName:'Tendulkar'},
+            {firstName:'Rahul',lastName:'Dravid'},
+            {firstName:'Saurav',lastName:'Ganguly'}]
+
+         $scope.ourPeople = people;
+    });
+        </script>        	   
+	</body>
+</html>

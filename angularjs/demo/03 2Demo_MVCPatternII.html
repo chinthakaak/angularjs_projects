@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app='myapp'>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+		<script>
+		 var myapp = angular.module("myapp", []);
+		 
+			var myFirstController = myapp.controller("MyFirstCtrl",
+			function ($scope) 
+			{
+				$scope.helloMsg = "Hello Guys! from MyFirstCtrl!";
+				$scope.hiMsg = "Just to say Hi! from MyFirstCtrl!";
+			});
+
+
+		var mySecondController = myapp.controller("MySecondCtrl",
+			function ($scope) 
+			{
+				$scope.helloMsg = "Hello Guys! from MySecondCtrl!";
+			});
+		</script>
+	</head>
+	<body>
+		<div ng-controller='MyFirstCtrl'>
+			<h1>{{helloMsg}}</h1>
+			<h1>{{hiMsg}}</h1>
+		</div>
+		<div ng-controller='MySecondCtrl'>
+			<h1>{{helloMsg}}</h1>
+			<!-- <h1>{{hiMsg}}</h1> -->
+		</div>
+	</body>
+</html>

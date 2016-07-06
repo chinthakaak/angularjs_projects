@@ -1,0 +1,84 @@
+<!-- Automatic Initialization -->
+<!--  If the ng-app directive is found then Angular will load the module associated with the directive.
+create the application injector, compile the DOM treating the ng-app directive as the root of the compilation. 
+This allows you to tell it to treat only a portion of the DOM as an Angular application. -->
+ <!--<!doctype html>
+<html ng-app>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>	
+	</head>
+	<body>
+		I can add: 1 + 2 and Result is  {{ 1+2 }}.
+	</body>
+</html> -->
+
+<!-- Manual Initialization -->
+<!-- If you need to have more control over the initialization process, 
+   you can use a manual bootstrapping method instead. 
+	 This is the sequence that your code should follow:
+		After the page and all of the code is loaded, 
+    find the root element of your AngularJS application, 
+    which is typically the root of the document.
+		Call angular.bootstrap to compile the element into an executable,
+    bi-directionally bound application.-->
+		<!-- You should not use the ng-app directive when manually bootstrapping your app. -->
+
+<!--<!doctype html>
+<html>
+<body>
+  <div ng-controller="MyController">
+    Hello {{greetMe}}!
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+  <script>
+    angular.module('myApp', [])
+      .controller('MyController', ['$scope', function ($scope) {
+        $scope.greetMe = 'World';
+      }]);
+
+    angular.element(document).ready(function() {
+	// Use this function to manually start up angular application.
+      angular.bootstrap(document, ['myApp']); 
+    });
+  </script>
+</body>
+</html>-->
+
+<!--Multiple Application bootstrapping in one html page-->
+
+<!doctype html>
+<html>
+<body>
+  <div id="divOne" ng-controller="MyController">
+    Hello {{greetMe}}!
+  </div>
+  
+  <div id="divTwo" ng-controller="MyControllerII">
+    How is {{city}}!
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+  <script>
+    angular.module('myApp', [])
+      .controller('MyController', ['$scope', function ($scope) {
+        $scope.greetMe = 'World';
+      }]);
+
+     angular.module('myAppII', [])
+      .controller('MyControllerII', ['$scope', function ($scope) {
+        $scope.city = 'Pune';
+      }]);
+
+      var dvOne = document.getElementById("divOne");
+      var dvTwo = document.getElementById("divTwo");
+
+    angular.element(document).ready(function() {
+      angular.bootstrap(dvOne, ['myApp']); 
+      angular.bootstrap(dvTwo, ['myAppII']); 
+    });
+
+  </script>
+</body>
+</html>

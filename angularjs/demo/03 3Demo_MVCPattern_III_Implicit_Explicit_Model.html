@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html ng-app="myAppName">
+<head>
+    <title></title>
+</head>
+<body>
+    <div ng-controller="CustomerController">
+        <h1>
+            <!-- filter - can be used for formatting, modifying and 
+            ordering/sorting dataset, filtering a data set. -->
+            <!-- uppercase, medium and mediumDate, currency are filters - 
+            for formatting -->
+            {{customer.Id}} {{customer.Name | lowercase}} 
+            {{customer.dob | date:'mediumDate'}} 
+            {{customer.Amount | currency}}
+        </h1> 
+    </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+        <script>
+        var myApp = angular.module('myAppName',[]);
+
+        // //1
+        // myApp.controller('CustomerController', 
+        // function ($scope) {
+        //    // implicit model
+        //    $scope.customer = {
+        //        Id:101,
+        //        Name: "Abhijeet",
+        //        dob: new Date().toDateString(),
+        //        Amount: 1234
+        //    };
+        // });
+
+        //2
+        //explicit model
+        function Customer(id, nm, d,a) {
+            this.Id = id;
+            this.Name = nm;
+            this.dob = d;
+            this.Amount = a;
+        };
+
+        myApp.controller('CustomerController', function ($scope) {
+            $scope.customer = 
+            new Customer(101, "Abhijeet", new Date().toDateString(), 1234);
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+
+<!DOCKTYPE html>
+<html ng-app>
+	<head>
+		<title>
+			Using AngularJS Data Binding!
+		</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	</head>
+	<body>
+		Your City is <span style="font-size:x-large;font-weight:bolder;" ng-bind="city" ></span><br/>
+		<!--AngularJS Expression / Interpolation directive-->
+		City <h1>{{city}}</h1> 
+		<!--OneTime-->
+		City <h1>{{::city}}</h1> 
+	   <br/>City:- <input type="text" ng-model="city"/><br/>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html ng-app='myApp'>
+    <head>
+        <title>Demo ng-repeat $index,$first,$last!</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+   </head>
+   <body>
+
+<div ng-controller="RepeatController">
+  I have {{friends.length}} friends. They are:
+  <ul>
+    <li ng-repeat="friend in friends">
+        <span ng-show="{{$first}}">first</span>
+        <span ng-show="{{$last}}">last</span>
+      [{{$index + 1}}] {{friend.name}} 
+      who is {{friend.age}} years old. {{$first}} {{$last}} {{$middle}}
+    </li>
+    <ul>
+</div>
+   <script>         
+        var myApp = angular.module('myApp',[]);
+        myApp.controller('RepeatController',
+         function($scope) {
+        $scope.friends = [
+        {name:'Rahul', age:25, gender:'boy'},
+        {name:'Sonali', age:30, gender:'girl'},
+        {name:'Pranita', age:28, gender:'girl'},
+        {name:'Shankar', age:15, gender:'girl'},
+        {name:'Sameera', age:28, gender:'girl'},
+        {name:'Kapil', age:95, gender:'boy'},
+        {name:'Amar', age:50, gender:'boy'},
+        {name:'Shruti', age:27, gender:'girl'},
+        {name:'Manish', age:40, gender:'boy'},
+        {name:'Shweta', age:60, gender:'girl'}
+  ];
+});
+       </script>
+	</body>
+</html>

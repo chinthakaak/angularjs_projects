@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo ng-if and ng-init!</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+   </head>
+   <body ng-app="">
+    Check / Uncheck <input type="checkbox" ng-model="myVar"
+        ng-init="myVar = true">
+    <h1>Welcome</h1>
+    <div ng-if="myVar">
+        <p style="font-size:x-large;">Welcome to my Home Page!</p>
+    </div>    
+   </body>
+</html>

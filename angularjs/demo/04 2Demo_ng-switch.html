@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<body ng-app="">
+
+<select ng-model="myVar">
+  <option value="cars">Cars
+  <option value="bikes">Bikes
+  <option value="planes">Planes
+</select>
+
+<div ng-switch="myVar">
+  <div ng-switch-when="cars">
+     <h1>Cars</h1>
+     <p>Welcome to the world of <span style='font-weight:bold;font-size:large;'>Cars</span>.</p>
+  </div>
+  <div ng-switch-when="bikes">
+     <h1>Bikes</h1>
+     <p>Welcome to the world of <span style='font-weight:bold;font-size:large;'>Bikes</span>.</p>
+  </div>
+  <div ng-switch-when="planes">
+     <h1>Planes</h1>
+     <p>Welcome to the world of <span style='font-weight:bold;font-size:large;'>Planes</span>.</p>
+  </div>
+  <div ng-switch-default>
+     <h1>Switch</h1>
+     <p>Select choice from the dropdown, to switch the content of this DIV.</p>
+  </div>
+</div>
+</body>
+</html>

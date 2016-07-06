@@ -1,0 +1,19 @@
+
+<!DOCKTYPE html>
+<html ng-app>
+	<head>
+		<title>
+			Hello World!
+		</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	</head>
+	<body>
+        {{"Hello World!"}}
+        <br/>City:- <input type="text" ng-model="city"/><br/> <!--TwoWay Data Binding-->
+		Your City is <span style="font-size:x-large;font-weight:bolder;" ng-bind="city" ></span><br/><!--OneWay Data Binding-->
+        Your City is {{city}} <!--Interpolation Directive / Angular Expression!-->
+        <script>
+            $scope.city = "Pune";
+        </script>        	   
+	</body>
+</html>
