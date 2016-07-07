@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html ng-app="app">
+<head>
+	<title>Data Bind Two Way</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+</head>
+<body>
+	<!-- View -->
+	<div ng-controller="personController">
+	<!--ng-model is for two way binding. At the start text box contains the text 'Colombo'. This means the model is bound to view.  -->	
+		<br/><input type="text" ng-model="city"><br/>
+	<!-- 	We can use ng-bind to verify model has been updated by using ng-bind -->
+	<br/>Model has been updated with <span ng-bind="city"></span>
+
+	</div>
+	
+	<!-- Controller  -->
+	<script>
+		var app = angular.module('app',[]);
+		app.controller("personController", function($scope)
+			{
+				// Model
+				$scope.city = "Colombo";
+			});
+	</script>
+		
+	
+</body>
+</html>
