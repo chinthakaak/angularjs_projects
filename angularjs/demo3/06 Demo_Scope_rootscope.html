@@ -1,0 +1,36 @@
+<!-- The $rootScope is the top-most scope. 
+An app can have only one $rootScope which will 
+be shared among all the components of an app. 
+Hence it acts like a global variable.
+All other $scopes are children of the $rootScope. -->
+	
+<!doctype html> 
+	<html> 
+	<body ng-app="myApp"> 
+		<div ng-controller="Ctrl1" style="border:2px solid blue; padding:5px"> 
+			Hello {{msg}}! <br />
+			Hello {{name}}! (rootScope)
+		</div> 
+		<br /> 
+		<div ng-controller="Ctrl2" style="border:2px solid green; padding:5px">
+			Hello {{msg}}! <br /> 
+			Hey {{myName}}! <br /> 
+			Hi {{name}}! (rootScope) 
+		</div> 
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+		</script> 
+		<script> 
+			var app = angular.module('myApp', []);
+			app.controller('Ctrl1', function ($scope, $rootScope)
+			{ 
+				$scope.msg = 'World'; 
+				$rootScope.name = 'AngularJS'; 
+			});
+			app.controller('Ctrl2', function ($scope, $rootScope)
+			{ 
+				$scope.msg = 'Universe'; 
+				$scope.myName = $rootScope.name; 
+			}); 
+		</script> 
+	</body> 
+</html>	

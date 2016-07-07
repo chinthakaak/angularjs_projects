@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+</head>
+<body>
+    <div ng-controller="myStudentController">
+        <table border="0">
+            <tr>
+                <td>Enter First Name!</td>
+                <td><input type="text" ng-model="student.firstName" /></td>
+            </tr>
+            <tr>
+                <td>Enter Last Name!</td>
+                <td><input type="text" ng-model="student.lastName" /></td>
+            </tr>
+            <tr>
+                <td>Enter Fees!</td>
+                <td><input type="text" ng-model="student.fees" /></td>
+            </tr>
+            <tr>
+                <td>Enter Subject Name!</td>
+                <td><input type="text" ng-model="subjectName" /></td>
+            </tr>
+            <tr>
+                <td>Enter Subject Marks!</td>
+                <td><input type="text" ng-model="inMarks" /></td>
+            </tr>
+            <tr>
+                <td>Min Marks:<input ng-model="minMarks" /></td>
+            </tr>
+            <tr>
+                <td>Max Marks:<input ng-model="maxMarks" /></td>
+            </tr>
+        </table>
+        <table border="0">
+            <tr>
+                <td>Name in uppercase!</td>
+                <td>{{student.fullName() | uppercase}}</td>
+            </tr>
+            <tr>
+                <td>Name in lowercase!</td>
+                <td>{{student.fullName() | lowercase}}</td>
+            </tr>
+            <tr>
+                <td>Fees!</td>
+                <!--<td>{{student.fees|currency}}</td>-->
+                <!--<td>{{student.fees|currency:'&euro;'}}</td>-->
+                <td>{{student.fees|currency:'&#8377;'}}</td>
+            </tr>
+            <tr>
+                <td>Subjects!</td>
+                <td>
+                    <ul>
+                        <!--<li ng-repeat="subject in student.subjects
+                        |filter: subjectName">
+                            {{subject.name+", marks: "+subject.marks}}
+                        </li>-->
+                        
+                        <li ng-repeat="subject in student.subjects
+                        |filter: greaterThan('marks', inMarks)">
+                            {{subject.name+", marks: "+subject.marks}}
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Date of Joining!</td>
+                <!--<td>{{student.doj}}</td>-->
+                <!--<td>medium: <strong>{{student.doj |date:'medium'}}</strong></td>-->
+                <!--<td>mediumDate: <strong>{{student.doj |date:'mediumDate'}}</strong></td>-->
+                <td>shortDate: <strong>{{student.doj |date:'shortDate'}}</strong></td>
+            </tr>
+            <tr>
+         <td>Discuount Plan:</td>
+         <td>{{student.discountPlan | stripDashes}}</td>
+            </tr>
+            <tr>
+                <td>Subjects!</td>
+                <td>
+                <ul>    
+                        <li ng-repeat="subject in student.subjects
+                        |filter: marksFilter('marks', minMarks,maxMarks)">
+                            {{subject.name+", marks: "+subject.marks}}
+                        </li>
+                    </ul>
+                    </td>
+                </tr>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js">
+    </script>
+    <script>
+        var myApp = angular.module('myApp', []);
+       
+        // custom filter replacing dashes with spaces
+        myApp.filter('stripDashes', function ()
+        {
+            return function (textToFilter) {
+                return textToFilter.split('-').join(' ');
+            };
+        });
+        
+        var myStudentController =
+            myApp.controller('myStudentController', function ($scope) {
+                $scope.student = 
+                         {
+                             firstName: 'Abhijeet',
+                             lastName: 'Gole',
+                             fees: 5000,
+                             subjects:
+                                 [
+                                     { name: 'Physics', marks: 75 },
+                                     { name: 'Chemistry', marks: 85 },
+                                     { name: 'Maths', marks: 95 },
+                                   ],
+                             fullName: function () {
+                                 return $scope.student.firstName + " " +
+                                     $scope.student.lastName;
+                             },
+                             doj: new Date(),
+                             discountPlan:'Summer-Discount-Plan',
+                         };
+         $scope.greaterThan = function(prop, val){
+                              return function(subject){
+                                    return subject[prop] > val;
+                                        }
+                                    } 
+         $scope.marksFilter = function(prop, minVal,maxVal){
+                              return function(subject){
+                                    return subject[prop] > minVal && subject[prop] < maxVal;
+                                        }
+                                    } 
+            });
+    </script>
+</body>
+</html>
+

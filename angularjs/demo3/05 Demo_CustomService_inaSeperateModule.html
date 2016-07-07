@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="myAppModule">
+	<head>
+		<title>Date Time Custom Service Example!</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js">
+        </script>
+        <script src="./05 ServiceModule.js"></script
+	</head>
+	<body>
+  		<script>		
+			var myAppModule = angular.module('myAppModule', ['mathApp']);
+			
+			myAppModule.controller("MyController",
+                function ($scope, CalculatorService)
+				{                    
+					// $scope.theSquare = CalculatorService.square(5);
+					// $scope.theCube = CalculatorService.cube(5);
+                   
+                    $scope.myNo = 1;
+                    $scope.Square = function()
+                    {
+					    $scope.theSquare = CalculatorService.square($scope.myNo);
+                    }
+                    $scope.Cube = function()
+                    {
+					    $scope.theCube = CalculatorService.cube($scope.myNo);
+                    }
+				});
+		</script>
+		
+		<div ng-controller="MyController">
+			<!--<p>Addition is {{theSum}}</p>
+			<p>Multiplication is {{theMult}}</p>-->
+            Value to square and cube:-  <input type="number"
+            ng-model="myNo"/><br/>
+            <button ng-click="Square()">Square</button>
+            <button ng-click="Cube()">Cube</button><br/>
+			<p>Square is {{theSquare}}</p>
+			<p>Cube is {{theCube}}</p>
+		</div>
+	</body>
+</html>

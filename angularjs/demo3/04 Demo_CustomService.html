@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myAppModule">
+	<head>
+		<title>Date Time Custom Service Example!</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js">
+        </script>
+	</head>
+	<body>
+  		<script>		
+			var myAppModule = angular.module('myAppModule', []);
+							
+			myAppModule.service('dateTimeService', function () {
+			    
+			    this.getDate = function () {
+			        return new Date().toDateString();
+			    }
+			    this.getTime = function () {
+			        return new Date().toTimeString();
+			    }
+			});
+			
+			myAppModule.controller("MyController",
+                function (dateTimeService,$scope)
+				{
+					$scope.theDate = dateTimeService.getDate();
+					$scope.theTime = dateTimeService.getTime();
+				});
+		</script>
+		
+		<div ng-controller="MyController">
+			<p>{{theDate}}</p>
+			<p>{{theTime}}</p>
+		</div>
+	</body>
+</html>

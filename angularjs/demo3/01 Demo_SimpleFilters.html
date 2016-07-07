@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <!--Denmark Currency-->
+        <!--<script src="https://code.angularjs.org/1.2.5/i18n/angular-locale_da-dk.js"></script>-->
+        <!--USD-->
+        <!--<script src="https://code.angularjs.org/1.2.5/i18n/angular-locale_en-us.js"></script>-->
+        <!--INR-->
+        <script src="https://code.angularjs.org/1.2.5/i18n/angular-locale_en-in.js"></script>
+	</head>
+	<body>
+            <div  ng-controller="MyFilterDemoCtrl">
+                <h1>number</h1>
+                <span>{{myData.theNumber |number:3}}</span><br/>
+                <span>{{myData.theNumber |number:2}}</span><br/>
+                <span>{{myData.theNumber |number:1}}</span><br/>
+                <span>{{myData.theNumber |number}}</span><br/>
+
+                <h1>lowercase & uppercase</h1>
+                <span>{{myData.mixedCaseText}}</span><br/>
+                <span>{{myData.mixedCaseText | lowercase}}</span><br/>
+                <span>{{myData.mixedCaseText | uppercase}}</span><br/>
+                
+                <h1>currency</h1>
+                <span>{{myData.theNumber | currency}}</span><br/>
+                <span>{{myData.theNumber | currency:'&euro;'}}</span><br/>
+                <span>{{myData.theNumber | currency:'&#8377;'}}</span><br/>
+                
+                <h1>date</h1>
+
+                <span>medium:<strong> {{ myData.dateofBirth | date:'medium'}} </strong></span><br/>
+		        <span>mediumDate:<strong> {{ myData.dateofBirth | date:'mediumDate'}} </strong></span><br/>
+                <span>short:<strong> {{ myData.dateofBirth | date:'short'}} </strong></span><br/>
+		        <span>shortDate:<strong> {{ myData.dateofBirth | date:'shortDate'}} </strong></span><br/>
+                <span>fullDate:<strong> {{ myData.dateofBirth | date:'fullDate'}} </strong></span><br/>
+                <span>longDate:<strong> {{ myData.dateofBirth | date:'longDate'}} </strong></span><br/>
+                <span>mediumTime:<strong> {{ myData.dateofBirth | date:'mediumTime'}} </strong></span><br/>
+                <span>shortTime:<strong> {{ myData.dateofBirth | date:'shortTime'}} </strong></span><br/>
+                <!--<span>{{ 1288323623006 | date }}</span><br/>-->
+                <span>This person born in the month of 
+                    {{ myData.dateofBirth | date:'MMMM'}} on a 
+                    {{ myData.dateofBirth | date:'EEEE'}} at 
+                    {{ myData.dateofBirth | date:'ha'}}
+                </span><br/><br/>
+                <div ng-repeat="player in myData.players">
+                <!--<div ng-repeat="player in myData.players | limitTo:3">-->
+                <!--<div ng-repeat="player in myData.players | filter:filterArray">-->
+                <!--<div ng-repeat="player in myData.players | orderBy:mySortField:reverse">-->
+                    <!--{{player.name}} {{player.country}}-->
+                    <!--{{player.name}} : {{$first}}, {{$middle}}, {{$last}}-->
+                    <!--{{player.country | limitTo:3 | uppercase}}-->
+                    <!--{{player.country | myCustomFilter}}-->
+                    {{player.country | myCustomFilter:2:5}}
+                </div>
+
+                <ol> 
+                    <li 
+                    ng-repeat="player in filteredItems = 
+                                ( myData.players | filter:filterArray) "> 
+                    	{{player.name}} : {{player.country}} 
+                    </li> 
+                </ol> 
+
+                <div>{{filteredItems.length}}</div>
+
+            </div>
+        <script>
+            var myapp = angular.module("myApp", []);
+            var myController = myapp.controller("MyFilterDemoCtrl",
+                function ($scope)
+                {
+                    $scope.myData = {};
+                    $scope.myData.theNumber = 12345.67;
+                    $scope.myData.mixedCaseText = "soME miXED Case TeXt!";
+                    $scope.myData.dateofBirth= new Date(2015, 0, 10);
+                    $scope.myData.players = [
+                        {name:'Sachin',country:'India'},
+                        {name:'Mathew',country:'Australia'},
+                        {name:'Brian',country:'West Indies'},
+                        {name:'Yuvraj',country:'India'},
+                        {name:'Sangkara',country:'Srilanka'},
+                        {name:'Inji',country:'Pakistan'},
+                        {name:'Smith',country:'South Africa'},
+                        {name:'McCullum',country:'Newzealand'},
+                        {name:'Wasim',country:'Pakistan'},
+                        {name:'Virat',country:'India'}];
+
+                   $scope.filterArray = function(player)
+                    {
+                        if(player.country == "Pakistan") 
+                            return false;
+                        return true;
+                    }
+                    $scope.mySortField = 'country';
+                    $scope.reverse = true;
+                });
+            
+            // // Custom Filter
+            //  myapp.filter('myCustomFilter', function() 
+            //  { 
+            //     return function(stringValue) 
+            //         { 
+            //             return  stringValue.substring(0,3); 
+            //         }; 
+            // });
+
+            // Custom Filter with parameters
+            myapp.filter('myCustomFilter', function()
+             { 
+                return function(stringValue, startIndex, endIndex) 
+                    {
+                     return stringValue.substring(
+                         parseInt(startIndex), 
+                         parseInt(endIndex)); 
+                      };
+             });
+
+
+		</script>
+    </body>
+</html>

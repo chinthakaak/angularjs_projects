@@ -1,0 +1,114 @@
+<!-- Service - A good way to think about an Angular service is as a 
+set of tightly related functions, managed by the Angular,
+which are made readily available for use across an application. 
+For example, you might use something as
+common as a company-wide data service, which enables any part of
+your application to send and retrieve data to and
+from a corporate database. -->
+<!-- In Angular, services are not only about server communication and
+data access but also getting a reference to the browser’s 
+window object can also be achieved by using a service:
+the built-in $window service. You can even create animations by 
+using the built-in $animate service. -->
+
+<!--What makes Angular Services pretty special
+
+• When and where is the right place to instantiate my service?
+• What is the best way to manage service dependencies across 
+my application?
+• What is the best approach for making sure that my services 
+can be unit-tested and configurable?
+• How should I handle persisting and sharing services between 
+my controllers?
+
+Of course, the answer to questions such as these, and many more 
+just like them, have already been addressed by the Angular team.
+As a developer, you need only learn some implementation details, 
+but you can otherwise relax in the knowledge that you are using
+a solid and well-thought-out solution. -->
+
+<!DOCTYPE html>
+<html ng-app="myAppModule">
+	<head>
+		<title>Built In Services Example!</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	</head>
+	<body>
+  		<script>
+			var myAppModule = angular.module('myAppModule', []);
+		
+			myAppModule.controller("MyController", 
+			function ($scope,$window,$location,$document,$parse,
+						$timeout,$interval)
+				{
+					$scope.winInnerWidth = $window.innerWidth;
+					$scope.winOuterWidth = $window.outerWidth;
+
+					$scope.url = $location.absUrl();
+					$scope.protocol = $location.protocol();
+					$scope.host = $location.host();
+					$scope.port = $location.port();
+
+					$scope.docTitle = $document[0].title;
+
+					  $scope.user = 
+					  	{
+    						name: 'Abhijeet'
+  						};
+  				
+				  	var getName = $parse('name'),
+                    setName = getName.assign;
+
+                	$scope.parseAgain = function() {
+                    	$scope.userName =
+						 setName($scope, $scope.inName);
+                	};
+
+					//The $timeout service is AngularJS' version of 
+					//the window.setTimeout function.
+					$scope.myHeader = "Hello!, How are you?";
+  					$timeout(function ()
+							   {
+      					$scope.myHeader = "Just to say Hi!";
+  							}, 3000);
+
+					//The $interval service is AngularJS' version of
+					// the window.setInterval function.
+				  $scope.theTime = new Date().toLocaleTimeString();		  
+  				  $interval(function() 
+					  {
+      					$scope.theTime=new Date().toLocaleTimeString();
+  					  }, 1000);
+
+					});
+		</script>
+
+		<div ng-controller="MyController">
+			<!--$window-->
+			<p>Window innerWidth: {{winInnerWidth}}px</p>
+			<p>Window outerWidth: {{winOuterWidth}}px</p>
+
+			<!--$location-->
+			<p>The URL is: {{url}}</p>
+			<ul>
+				<li>{{protocol}}</li>
+				<li>{{host}}</li>
+				<li>{{port}}</li>
+			</ul>
+
+			<!--$document-->
+			<p>The page title is: {{docTitle}}</p>
+
+			<!--$parse-->
+			<input type="text" ng-model="inName" 
+			ng-change="parseAgain()" placeholder="Enter some string">
+			<h1>{{userName}}</h1>
+
+			<!--$timeout-->
+			<p>{{myHeader}}</p>
+
+			<!--$interval-->
+			<h1>{{theTime}}</h1>
+		</div>
+	</body>
+</html>
