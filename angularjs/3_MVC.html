@@ -14,6 +14,8 @@
 	
 	<!-- Controller  -->
 	<script>
+		// when we define varibles as below in javascripts, it is a global variable and contamitates the global namespace. We
+		// should better use chain syntax instead of the below code
 		var appmod = angular.module('app',[]);
 		appmod.controller("PersonController", function($scope) // constructor
 			{
