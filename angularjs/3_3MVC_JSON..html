@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html ng-app="app">
+<head>
+	<title>MVC</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+</head>
+<body>
+	<!-- View -->
+	<div ng-controller="MessageController">
+		Messages are <span ng-repeat='message in messages'> <br>
+		{{message.user}} {{message.msgtext}}<br/>
+		</span>
+	</div>
+	
+	<!-- Controller  -->
+	<script>
+		// when we define varibles as below in javascripts, it is a global variable and contamitates the global namespace. We
+		// should better use chain syntax instead of the below code
+		var appmod = angular.module('app',[]);
+		appmod.controller("MessageController", function($scope) // constructor
+			{
+				// Model
+				$scope.messages = [
+				                  {user:'patient',msgtext:'hi'},
+				                  {user:'doctor',msgtext:'hi, how can I help you.'},
+								  {user:'patient',msgtext:'I am having fever'},
+				                  {user:'doctor',msgtext:'Oh my god.. you will die.'}
+				                  ]				
+			});
+	</script>	
+</body>
+</html> 

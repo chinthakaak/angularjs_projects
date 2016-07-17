@@ -1,0 +1,36 @@
+.navbar-default{
+    background: #1490c9;
+    border: 0px;
+    border-radius: 0px;
+    padding: 15px 0px;
+}
+a{color: #fff}
+a:hover{color: #fff; text-decoration: none}
+.navbar-default .navbar-brand{
+    color: #fff;
+    font-size: 25px;
+}
+.container-fluid{
+    width: 1150px;
+}
+.col-md-4{width: 8.333333%}
+.col-md-8{
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    width: 90.666667%;
+    padding: 0px;
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.16);
+-moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.16);
+box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.16);
+}
+.doctoricon{padding: 0px; width: 7.333333%;}
+.rowcolor{background: #cae8f3; border: 1px solid #fff; color: #31748d; width: 83.108967%; }
+.rowcolor .user{color: #31748d;}
+.user{font-size: 18px; color: #999999; padding: 11px 5px 1px 0px;}
+.datetime{font-size: 12px; color: #454545; padding: 15px 5px 1px 0px; text-align: right;}
+.datetime span{
+    display: inline-block;
+    padding: 0px 5px;
+}
+.col-xs-12{padding: 0px 0px 30px 0px}
+.navbar-default .navbar-brand:hover{color: #fff}

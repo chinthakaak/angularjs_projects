@@ -6,8 +6,23 @@
     </head>
     <body>
         <!--View-->
-        <div>
-            
+        <div ng-controller="controller1">
+            <span>
+                Hello controller 1 {{msg}}
+            </span>
         </div>
+        <div ng-controller="controller2">
+            <span>
+                Hello controller 2 {{msg}}
+            </span>
+        </div>
+
+        <script>
+            //
+        <!--controller1-->
+            angular.module('app1',[])
+            .controller()
+        </script>
+            
     </body>
 </html>
