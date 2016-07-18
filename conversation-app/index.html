@@ -30,6 +30,9 @@
 	<script src="js/mqttws31.min.js"></script>
 	<script src="js/app-config.js"></script>
 	<script src="js/app-mqtt-provider.js"></script>
+	<script type="text/javascript">
+		connect_mqtt()
+	</script>
 </head>
 <body ng-app = "convApp">
 	<nav class="navbar navbar-default">
@@ -74,7 +77,6 @@
 	</div>
 	
 	<script type="text/javascript">
-		connect_mqtt()
 		angular.module("convApp", [])
 		
 		// Controller
