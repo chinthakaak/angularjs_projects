@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ng-app="myAppModule">
+	<head>
+		<title>SPA Example!</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+		<style>
+			.navbar-brand {
+ 				 	font-weight: bold;
+  					font-size: xx-large;
+				}	
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js">
+        </script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js">
+		</script>        
+	</head>
+	<body>
+  		<script>		
+			var myAppModule = angular.module('myAppModule', ['ngRoute']);
+						
+			myAppModule.config(function ($routeProvider) 
+				{
+				//Routing with express will primarily be done for //the API, and 
+                //routing in angular will be done to handle the front-end of your application.
+
+					// configure the routes
+						$routeProvider .when('/', 
+											{
+												// route for the default (home) page
+												templateUrl: '4 home.html',
+												controller: 'homeController'
+											})
+										.when('/home', 
+											{
+												// route for the home page
+												templateUrl: '4 home.html',
+												controller: 'homeController'
+											})
+										.when('/about', 
+											{
+												// route for the about page
+												templateUrl: '4 about.html',
+												controller: 'aboutController'
+											})
+										.when('/contact/', 
+											{
+												// route for the contact page
+												templateUrl: '4 contact.html',
+												controller: 'contactController'
+											})
+										.otherwise(
+											{
+												// when all else fails
+												templateUrl: '4 routeNotFound.html',
+												controller: 'notFoundController'
+											});
+				});
+			myAppModule.controller('homeController', function ($scope) 
+				{
+					$scope.message = 'Welcome to my home page!';
+				});
+			myAppModule.controller('aboutController', function ($scope) 
+				{
+					$scope.message = 'Find out more about us!';
+				});
+			myAppModule.controller('contactController', function ($scope) 
+				{
+					$scope.message = 'Contact us!';
+				});
+			myAppModule.controller('notFoundController', function ($location,$scope) 
+				{
+					$scope.message = 'There seems to be a problem finding the page you wanted';
+					$scope.attemptedPath = $location.path();
+				});
+		</script>
+		
+		<div ng-controller="homeController">
+			<header>
+				<nav class="navbar navbar-default">
+					<div class="container">
+						<div class="navbar-header">
+							<a class="navbar-brand" href="/">debellate Technologies</a>
+						</div>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
+							<li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+							<li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+						</ul>
+					</div>
+				</nav>
+			</header>
+			
+			<div id="main">
+				<!-- this is where content will be injected -->
+				<div ng-view></div>
+			</div>
+            			
+		</div>
+	</body>
+</html>

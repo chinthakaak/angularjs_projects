@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myAppModule">
+	<head>
+		<title>Value!</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js">
+        </script>
+	</head>
+	<body>
+  		<script>		
+			angular.module('myAppModule', [])				
+            .value('usersOnline',0)
+            .value('user', {
+                    firstName: '',
+                    lastName: '',
+                    email: ''
+                    })            
+            .controller('MyController',function($scope,usersOnline,user)
+             {
+                $scope.usersOnline = usersOnline;
+                $scope.changeNoOfUsers = function()
+                {
+                    usersOnline++;
+                    $scope.usersOnline = usersOnline;
+                }
+
+                $scope.firstName = user.firstName;
+                $scope.lastName = user.lastName;
+                $scope.email = user.email;
+
+                $scope.changeUserDetails = function()
+                {
+                    user.firstName = 'Abhijeet';
+                    user.lastName = 'Gole';
+                    user.email = 'abhijeet_gole@persistent.com';
+
+                    $scope.firstName = user.firstName;
+                    $scope.lastName = user.lastName;
+                    $scope.email = user.email;
+                }
+            })
+		</script>
+		
+		<div ng-controller="MyController">
+            <h1>UsersOnline:- {{usersOnline}}</h1>
+            <button ng-click="changeNoOfUsers()">No of Users Online!</button>
+            <br/>
+            <h1>{{firstName}}</h1>
+            <h1>{{lastName}}</h1>
+            <h1>{{email}}</h1>			
+            <button ng-click="changeUserDetails()">Change User Details!</button>
+		</div>
+	</body>
+</html>
