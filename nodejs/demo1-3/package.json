@@ -1,0 +1,16 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "demo",
+  "main": "HelloWorld.js",
+  "dependencies": {
+    "mathjs": "^3.3.0",
+	"body-parser":"*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Welcome to my Application <%=name %></h2>
+<ul>
+<% users.forEach(function(user){  %>
+<li><%= user.name %></li>
+	<% }) %>
+</ul>
+<br>
+<a href="/addUser" >Add a new User</a>
+</body>
+</html>
