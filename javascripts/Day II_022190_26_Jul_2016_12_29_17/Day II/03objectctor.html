@@ -1,0 +1,38 @@
+<!DOCKTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+        <script>              
+        function Employee(r)
+        {
+            this.role =r;
+            // this.display = function()
+            // {
+            //     alert('CTOR Level '+this.role);
+            // }
+        };
+ 
+        Employee.prototype.display = function()
+        {
+            alert('Prototype Level '+this.role);
+        }
+
+        var emp1 = new Employee('Developer');
+        var emp2 = new Employee('Tester');
+        var emp3 = new Employee('Manager');
+
+           emp1.display = function()
+            {
+                alert('emp1 Object Level '+this.role);
+            }   
+
+        emp1.display();
+        emp2.display();
+        emp3.display();
+
+        </script>
+    </body>
+</html>

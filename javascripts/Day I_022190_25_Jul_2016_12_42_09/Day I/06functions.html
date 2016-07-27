@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Functions</title>
+</head>
+
+<body>
+    <script>
+
+            // var nm = sayHello('Ovee',1.5);
+            // console.log(nm);
+
+            // function declaration
+            function sayHello(name,age)
+            {
+                alert(name + ' is '+ age +' years old!');
+                return name.toUpperCase();
+            }
+
+            // var nm = sayHello('Ashish',16);
+            // console.log(nm); 
+
+            // display();
+
+            // function expression - no javascript hoisting 
+            var display = function()
+            {
+                alert('Welcome to the JS ASL!');
+            }
+
+            //display();
+
+            var g = 5;// global variable
+            function foo()
+            {
+                var a = 6; // local variable
+                //var x;// javascript hoisting
+                l = 7;// by default this is considered as a global variable
+                alert(g+l);
+                alert(x);
+                {
+                    var x = 9;
+                    alert(x);
+                    x++;
+                }
+                alert(x);
+            }
+            foo();
+            alert(l);
+
+            function GetArgs()
+            {
+                document.write('<br/> Inside GetArgs! <br/>');
+            for(var i=0;i<arguments.length;i++)
+            {
+                document.write('<br/>'+arguments[i]);
+            }                    
+            document.write('<br/>');
+            }
+                GetArgs();
+                GetArgs(1,2,3);
+                GetArgs(10,"abcd",4343.3);
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCKTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta content="text/html" charset="utf-8" />
+        <style>
+        div
+        {
+            background-color:palegreen;
+            font-size:large;
+        }
+        </style>
+    </head>
+    <body>
+        <div id='div1'></div>
+        <!--Obtrusive Javascript-->
+
+        <!--<button id='btn1' 
+    onclick="getElementById('div1').innerHTML = Date()">
+        The Date Time</button>-->
+        <!--<button id='btn1' 
+        onclick="getDateTime()">The Date Time</button>-->
+        <button id='btn1'>The Date Time</button>
+        <button id='btn2'>No Click!</button>
+        <script>
+        // HTML for the content and structure of the document
+        // CSS for the layout and styling
+        // Javascript for behaviour and interactivity
+        
+            function $(id)
+            {
+                return document.getElementById(id);
+            }            
+            // Unobtrusive Javascript
+            $('btn1').onclick = getDateTime;
+            
+            // $('btn1').onclick = just;
+            // function just()
+            // {
+            //     alert('just!');
+            // }
+
+            $('btn2').onclick = function()
+            {
+                // removing event handler for btn1's click event
+                $('btn1').onclick = null;
+            }
+
+            function getDateTime()
+            {
+                $('div1').innerHTML = Date();
+            }
+        </script>
+    </body>
+</html>

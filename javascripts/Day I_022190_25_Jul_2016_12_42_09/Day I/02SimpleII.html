@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Javascript Page!</title>
+      <script>
+    function foo()
+    {
+document.getElementById('para1').innerHTML 
+      = 'New Text!';
+    }
+    //window.onload = foo;
+    function bar()
+    {
+    alert('document.onreadystatechange! '+
+    this.readyState.toString());
+  document.getElementById('para1').innerHTML 
+      = 'New Text!';
+    }
+
+document.onreadystatechange = bar;
+// uninitialized - has not started loading yet
+// loading - is loading
+// loaded - is loaded
+// interactive - has loaded enough and user can interact
+// complete - fully loaded
+
+    </script>
+</head>
+<body>  
+    <p id='para1'>This is paragraph in the body tag!</p>    
+</body>
+</html>

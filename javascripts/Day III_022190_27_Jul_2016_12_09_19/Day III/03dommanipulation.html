@@ -1,0 +1,55 @@
+<!DOCKTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta content="text/html" charset="utf-8" />
+        <style>
+            p{font-size:xx-large;}
+            #opener{color:green;}
+            .closer{background-color:peachpuff;}
+        </style>
+    </head>
+    <body>
+        <button onclick="change()">Change!</button>
+        <p id='opener'>First Paragraph!</p>
+        <p>Second Paragraph!</p>
+        <p class='closer'>Third Paragraph!</p>
+        <p class='closer'>Fourth Paragraph!</p>
+        <div class='closer'>This is closer div!</div>
+        <hr/>
+        <div>This is simple div!</div>
+        <script>         
+            function change()
+            {
+                // var p1 = document.getElementById('opener');
+                // p1.style.color ='red';
+                 var p1 = document.querySelector('#opener');
+                p1.style.color ='blue';
+
+                var dArr = document.getElementsByTagName('div');
+                for(var i=0;i<dArr.length;i++)
+                {
+                    dArr[i].style.backgroundColor = 'Maroon';
+                    dArr[i].style.color ='peachpuff';
+                }
+
+                dArr = document.getElementsByClassName('closer');
+                for(var i=0;i<dArr.length;i++)
+                {
+                    dArr[i].style.backgroundColor = 'yellow';
+                    dArr[i].style.color ='green';
+                }
+                
+                var newPara = document.createElement('p');
+                newPara.innerHTML = 'New Para';
+                newPara.style.backgroundColor = 'palegreen';
+                newPara.style.width='200px';
+                newPara.style.border = 'Solid 5px Navy';
+                document.body.appendChild(newPara);
+
+                var delPara = document.getElementsByTagName('p')[2];
+                document.body.removeChild(delPara);                
+            }   
+        </script>
+    </body>
+</html>

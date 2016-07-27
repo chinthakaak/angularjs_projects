@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Popups and external JS!</title>
+    <style>
+        span {
+            font-size: x-large;
+            color: maroon;
+            font-weight: bolder;
+        }
+    </style>
+    <script src='mymath.js'></script>
+</head>
+<body>
+    <h1>Mathematical Operations!</h1>
+    Addition is :- <span id='spanAdd'></span><br/> Multiplication is :- <span id='spanMult'></span><br/>
+    <script>
+        var n1 = 
+        parseInt(prompt('Please Enter First No!',10));// parsing
+        var n2 = 
+        Number(prompt('Please Enter Second No!',20)); // Conversion        
+        var result = add(n1,n2);
+        document.getElementById('spanAdd').innerHTML = result;
+        result = mult(n1,n2);
+        document.getElementById('spanMult').innerHTML = result;
+
+if(confirm("Do you want to format your HDD!"))
+{
+    alert("You are very brave!");
+}
+else
+{
+    alert("A wise decision!");
+}     
+
+    var cars = ['Audi','Nano','BMW'];
+    for(var i=0;i<cars.length;i++)
+    {
+        document.write('<br/>'+cars[i]);
+    }
+    document.write('<br/>');
+
+    for(var i in cars)
+    {
+        document.write('<br/>'+cars[i]);
+    }
+
+    </script>
+</body>
+
+</html>

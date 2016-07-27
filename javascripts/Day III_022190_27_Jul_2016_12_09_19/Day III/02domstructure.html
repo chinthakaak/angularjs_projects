@@ -1,0 +1,79 @@
+<!DOCKTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta content='text/html' charset='utf-8' />
+    </head>
+    <body>
+        <ul id='myList'><li id='item'>Javascript</li><li>jQuery</li><li>AngularJS</li><li>NodeJS</li></ul>
+        <button onclick='getFirstChild()'>Get FirstChild!</button>
+        <button onclick='getNextSibling()'>Get NextSibling!</button>
+        <button onclick='getLastChild()'>Get LastChild!</button>
+        <button onclick='getPreviousSibling()'>Get PreviousSibling!</button>
+        <button onclick='getChildNodes()'>Get Child Nodes!</button>
+        <button onclick='getParentNode()'>Get Parent Node!</button>
+        <p id='demo'></p>        
+        <script>            
+            function $(id)
+            {
+                return document.getElementById(id);
+            }
+
+            function getFirstChild()
+            {
+                // document.getElementById('demo').innerHTML
+                //     += '<br/>';
+                $('demo').innerHTML += '<br/>';
+                
+                var list = 
+                $('myList').firstChild.innerHTML;
+                $('demo').innerHTML
+                    += '<br/>'+list;
+            }
+            function getNextSibling()
+            {
+                $('demo').innerHTML += '<br/>';
+                
+                var list =  $('myList').firstChild;
+                $('demo').innerHTML
+                    += '<br/>'+list.nextSibling.innerHTML;
+            }
+            function getLastChild()
+            {
+                $('demo').innerHTML += '<br/>';
+                
+                var list = 
+                $('myList').lastChild.innerHTML;
+                $('demo').innerHTML
+                    += '<br/>'+list;
+            }
+            function getPreviousSibling()
+            {
+                $('demo').innerHTML += '<br/>';
+                
+                var list =  $('myList').lastChild;
+                $('demo').innerHTML
+                    += '<br/>'+list.previousSibling.innerHTML;
+            }
+            function getChildNodes()
+            {
+                $('demo').innerHTML += '<br/>';
+                
+                var list =  $('myList').childNodes;
+                for(var l in list)
+                {
+                    $('demo').innerHTML
+                        += '<br/>'+list[l].childNodes[0].nodeValue;
+                }
+            }
+            function getParentNode()
+            {
+                $('demo').innerHTML += '<br/>';
+                
+                var list =  $('item').parentNode;
+                $('demo').innerHTML
+                    += '<br/>'+list.nodeName;
+            }
+        </script>
+    </body>
+</html>

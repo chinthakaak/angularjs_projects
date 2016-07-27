@@ -1,0 +1,90 @@
+<!DOCKTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+        <script>         
+        // built in objects
+        // String
+        // Date
+        // Array
+        // Boolean
+        // Math
+
+           var txt = "Hello World!";
+           document.write('<br/>'+txt.length);
+           document.write('<br/>'+ txt.toUpperCase());
+        
+        // User defined objects
+        //  create a direct instance of object as an empty object
+        //  object literal
+        //  using template, known as object constructor
+
+        // // direct instance or new Object
+        // var personObj1 = {};
+        // var personObj2 = new Object();
+
+        // personObj1.id = 1;
+        // personObj1.name = 'Sachin';
+        // personObj1.getData = function()
+        // {
+        //     return this.id+' '+this.name;
+        // }
+        // console.log(personObj1.id+','+personObj1.name);
+        // console.log(personObj1.getData());
+
+        // // object literal
+
+        // var personObj = {
+        //         id:1,
+        //         name:'Sachin',
+        //         getData:function()
+        //         {return this.id+' '+this.name;}
+        // };
+
+        // var personObj2 = {
+        //         id:2,
+        //         name:'Rahul',
+        //         getData:function()
+        //         {return this.id+' '+this.name;}
+        // };
+        // console.log(personObj.getData());
+
+        // Object Constructor    
+
+        function Employee(fName,lName,city)
+        {
+            this.firstName = fName;
+            this.lastName = lName;
+            this.city = city;
+            this.ctorMethod = function()
+            {
+                alert('CTOR Method!');
+            }
+        };// class
+
+        var emp1 = new Employee('Abhijeet','Gole','Pune');
+        var emp2 = new Employee('Sachin','Tendulkar','Mumbai');
+
+        console.log('FirstName: '+emp1.firstName+
+                    ' LastName: '+emp1.lastName+
+                    ' City: '+emp1.city);
+        console.log('FirstName: '+emp2.firstName+
+                    ' LastName: '+emp2.lastName+
+                    ' City: '+emp2.city);
+            emp1.ctorMethod();
+            emp2.ctorMethod();
+
+        emp1.getFullInfo = function()
+        {
+            return this.firstName+' '+
+                   this.lastName+' '+
+                   this.city;
+        }
+        console.log(emp1.getFullInfo());
+        //console.log(emp2.getFullInfo());
+        </script>
+    </body>
+</html>

@@ -9,7 +9,7 @@ console.log(greetObj.greet());
 
 console.log('Hello World to Node.js'+os.type());
 
-console.log("Sum:"+math.chain(3).math.add(4).add(5));
+//console.log("Sum:"+math.chain(3).math.add(4).add(5));
 
-console.log("Eval"+eval('34+(5*3))');
+//console.log("Eval"+eval('34+(5*3))'));
 console.log("Log"+math.log(1000,10));

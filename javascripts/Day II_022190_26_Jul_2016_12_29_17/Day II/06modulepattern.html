@@ -1,0 +1,45 @@
+<!DOCKTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+        <script>    
+        function Employee(id,name,salary)
+        {
+            this.id = id
+            this.name = name;
+            this.salary = salary;
+        }        
+
+        var empModule = (function()
+        {
+            var empList = [];
+            return {
+                add:function(e)
+                {
+                    empList.push(e);
+                },
+                show:function()
+                {
+                    for(var count  in empList)
+                    {
+                        console.log(empList[count]);
+                    }
+                }
+            };
+        })();// IIFE
+
+        var emp1 = new Employee(100,'Sachin',50000.00);
+        var emp2 = new Employee(200,'Rahul',60000.00);
+        var emp3 = new Employee(300,'Saurav',70000.00);
+
+        empModule.add(emp1);
+        empModule.add(emp2);
+        empModule.add(emp3);
+        empModule.show();
+        
+        </script>
+    </body>
+</html>

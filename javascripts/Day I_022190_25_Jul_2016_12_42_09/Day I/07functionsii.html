@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Anonymous Functions!</title>
+</head>
+
+<body>
+    <script>
+
+        // Anonymous Data 
+       "abcd",123, 234.234, [11,22,33], null;
+
+       // Anonymous Function
+       // uses
+       // Callback Method
+       // Self Executing Function // IIFE
+
+       function invoke_and_add(fun1,fun2)
+       {
+           return fun1()+fun2();
+       }
+       function one()
+       {
+           return 1;
+       }
+       function two()
+       {
+           return 2;
+       }
+       console.log(invoke_and_add(one,two));
+
+       // using anonymous method
+console.log(
+    invoke_and_add(
+        function()
+            {return 11;}, 
+        function()
+            {return 22;}
+        ));
+
+    (function()
+    {
+        alert('Doing Initialization! - Once and OFF!');
+    })();// IIFE
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCKTYPE html>
+<html>
+    <head>
+        <title>My Title</title>
+        <meta content="text/html" charset="UTF-8" />
+    </head>
+    <body>
+        <h1>Hello World</h1>
+        <p id='para1'>This is simple paragraph!</p>
+        <script>
+            // nodeName
+            // nodeType - 1 - Element,2 - Attribute,
+            // 3 - Text,8 - Comment,9 - Document
+            // nodeValue
+        document.write('<br/> NodeName:- '+
+        document.getElementById('para1').nodeName);
+        document.write('<br/> NodeType:- '+
+        document.getElementById('para1').nodeType);
+        document.write('<br/> NodeValue:- '+
+        document.getElementById('para1').childNodes[0].nodeValue);
+        </script>
+    </body>
+</html>

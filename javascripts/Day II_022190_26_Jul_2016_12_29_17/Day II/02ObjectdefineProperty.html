@@ -1,0 +1,58 @@
+<!DOCKTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+        <script>      
+        //    function Person(fName,lName)
+        //     {
+        //        this.firstName = fName;
+        //        this.lastName = lName;
+        //        this.species = 'Human';
+        //        this.fullName = function()
+        //        {
+        //            return this.firstName +' '+this.lastName;
+        //        }
+        //    };
+        //    var man = new Person('Rahul','Dravid');
+        //    console.log(man.fullName()+' '+man.species);
+        //    man.species = 'Fish';
+        //    console.log(man.fullName()+' '+man.species);
+
+            function Person(fName,lName)
+            {
+               this.firstName = fName;
+               this.lastName = lName;
+               this.fullName = function()
+               {
+                   return this.firstName +' '+this.lastName;
+               }
+            };
+            
+            var man = new Person('Rahul','Dravid');
+            console.log(man.fullName()+' '+man.species);
+
+            Object.defineProperty(man,'species',
+                {
+                    value:'Human',
+                    writable:false,
+                    configurable:false,
+                    enumerable:true
+                });
+
+            man.species = 'Fish';
+            console.log(man.fullName()+' '+man.species);
+
+            // delete man.species;
+            // console.log(man.fullName()+' '+man.species);
+
+            for(prop in man)
+            {
+                console.log(man[prop]);
+            }
+
+        </script>
+    </body>
+</html>

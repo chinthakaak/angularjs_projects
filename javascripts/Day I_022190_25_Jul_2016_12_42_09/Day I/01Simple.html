@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Javascript Page!</title>
+    <script>  
+        alert('Hi from Head!');
+    </script>
+</head>
+<body bgcolor='yellow'>
+    <script>
+        alert('Before para but still in the body!');
+    </script>
+    <p id='para1'>This is paragraph in the body tag!</p>
+    <script>
+        alert('After para but still in the body!');
+    </script>    
+    <script>
+        document.bgColor = 'green';
+      document.getElementById('para1').innerHTML 
+= 'New Text!';
+    </script>
+</body>
+</html>

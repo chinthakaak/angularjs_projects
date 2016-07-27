@@ -1,0 +1,106 @@
+<!--<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta content="text/html" charset="utf-8" />
+</head>
+<body>
+    <button onclick="funInner()">Inner_Height_Width</button>
+    <button onclick="funOuter()">Outer_Height_Width</button>
+    <p id="para1"></p>
+    <p id="para2"></p>
+    <script>
+        function funInner() {
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            document.getElementById("para1").innerHTML =
+                "Width: " + w + "<br/> Height: " + h;
+        }
+        function funOuter() {
+            var w = window.outerWidth;
+            var h = window.outerHeight;
+            document.getElementById("para2").innerHTML =
+                "Width: " + w + "<br/> Height: " + h;
+        }
+    </script>
+</body>
+</html>-->
+
+<!--<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title></title>
+    <meta content="text/html" charset="utf-8" />
+</head>
+
+<body>
+    <h2>Bruce Lee</h2>
+    <br/>
+    <a href="Javascript:newWindow()">Bruce Lee</a>
+    <a href="Javascript:closeWindow()">Close</a>
+    <script>
+            var winObj = null;
+            function newWindow()
+            {
+                winObj = open('bruce.jpg','Bruce Lee',"location=no");
+            }
+            function closeWindow()
+            {
+                winObj.close();
+            }
+        // screen - information about client's screen
+        console.log(screen);
+    </script>
+</body>
+
+</html>-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title></title>
+    <meta content="text/html" charset="utf-8" />
+</head>
+
+<body>
+    <p id='para1'></p>
+    <a href='https://www.google.com'>Google</a>
+    <button onclick="onFwd()">Go Forward!</button><br/><br/>
+    <script>
+        // navigator - object which contains
+        // information about browser
+         for(var prop in navigator)
+         {
+             var str = navigator[prop];
+             document.write(prop+'-------'+str+'<br/>');
+         }
+         var no_of_plugins = navigator.plugins.length;
+         for(var i=0;i<no_of_plugins;i++)
+         {
+             document.write('<br/> plugin '+(i+1)+' '+
+             navigator.plugins[i].name);
+         }
+         // location
+         function $(id)
+         {
+             return document.getElementById(id);
+         }
+         $('para1').innerHTML = 'Page Location is '+
+            window.location.href;
+        $('para1').innerHTML += '<br/>Page Hostname is '+
+            window.location.hostname;
+        $('para1').innerHTML += '<br/>Page path is '+
+            window.location.pathname;
+        $('para1').innerHTML += '<br/>Page protocol is '+
+            window.location.protocol;
+        // history
+        function onFwd()
+        {
+            window.history.forward();
+        }
+    </script>
+</body>
+
+</html>

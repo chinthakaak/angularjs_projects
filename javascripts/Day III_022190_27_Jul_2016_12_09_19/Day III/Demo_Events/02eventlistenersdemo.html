@@ -1,0 +1,136 @@
+<!--<!DOCKTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta content="text/html" charset="utf-8" />
+    </head>
+    <body>
+        <p id='para1'>This is simple paragraph!</p>
+        <script>
+        function $(id)
+            {
+                return document.getElementById(id);
+            }                
+        // Multiple Event Handlers for the same Event
+        document.addEventListener('click',
+        function()
+        {
+            $('para1').innerHTML = 'Hello World!';
+            $('para1').style.backgroundColor = 'orange';
+        });
+        document.addEventListener('click',
+        function()
+        {
+            $('para1').innerHTML += '<br/> Just to say Hi!';
+            $('para1').style.fontSize = 'large';
+            $('para1').style.color = 'white';
+        });
+
+        </script>
+    </body>
+</html>-->
+
+<!--<!DOCKTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta content="text/html" charset="utf-8" />
+    </head>
+    <body>
+        <div id='div1'>
+            <p id='p1'>This is bubbling!</p>
+        </div>
+        <div id='div2'>
+            <p id='p2'>This is capturing!</p>
+        </div>
+        <script>
+        function $(id)
+            {
+                return document.getElementById(id);
+            }                
+        $('div1').addEventListener('click',
+        function()
+        {
+            alert('You Clicked div1!');
+        },false);// default is bubbling - false;
+        $('p1').addEventListener('click',
+        function()
+        {
+            alert('You Clicked p1!');
+        },false);
+        $('div2').addEventListener('click',
+        function()
+        {
+            alert('You Clicked div2!');
+        },true);
+        $('p2').addEventListener('click',
+        function()
+        {
+            alert('You Clicked p2!');
+        },true);
+        </script>
+    </body>
+</html>-->
+
+<!--<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta content="html/text" charset="utf8"/>
+    <style>
+        div {
+            background-color:peachpuff;
+            color:maroon;
+            border:1px solid;
+            padding:50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <input type="button" id="mybtn" value="Remove!"/>
+    </div>
+    <p id="p1"></p>
+    <script>
+        document.getElementById("div1")
+            .addEventListener("mousemove", foo);
+        document.getElementById("mybtn")
+            .addEventListener("click", removeFoo);
+
+        function foo(evt) {
+    document.getElementById("p1").innerHTML =
+                (evt.pageX + " " + evt.pageY);
+        }
+
+        function removeFoo() {
+            document.getElementById("div1")
+                .removeEventListener("mousemove", foo);
+        }
+    </script>
+</body>
+</html>-->
+
+<!DOCKTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta content="text/html" charset="utf-8" />
+    </head>
+    <body>
+        Name:- <input type="text" id='txtInput'/>
+        <br/>
+        Hello <span id='nameSpan'></span>
+        <script>            
+        function $(id)
+            {
+                return document.getElementById(id);
+            }  
+        $('txtInput').addEventListener('keyup',
+        function() 
+        {
+            var txt = $('txtInput').value;
+            $('nameSpan').innerHTML = txt;
+        })            
+        </script>
+    </body>
+</html>
