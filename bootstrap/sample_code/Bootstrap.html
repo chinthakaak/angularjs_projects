@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+  		 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="bsStyles.css"/>
+        <script type="text/javascript" src="jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+         <!-- <script type="text/javascript" src="ScrollSpy.js"></script> -->
+       <script type="text/javascript">
+       
+       $(function(){
+    	   
+    	 /*  $('body').scrollspy({
+    		   target:'header .navbar',
+    		    offset:50 
+    		   
+    	   }) */
+    	
+    	 
+    	  $(".carousel").carousel({
+    		  interval:5000
+    		  
+    	  });
+      	  
+      	
+      			 var itemQty = $("#imgCarousel .item").length;
+   	   
+			   	   var indCarousel = "";
+			   	   for(var i=0;i<itemQty;i++){
+			   		   
+			   		   if(i == 0){
+			   		   indCarousel += "<li data-target='#imgCarousel' data-slide-to='"+i+"' class='active'></li>";
+			   		   }
+			   		   else{
+			   			   indCarousel += "<li data-target='#imgCarousel' data-slide-to='"+i+"'></li>"; 
+			   		   }
+			   		   
+			   	   }
+			   	   
+			   	   $("#imgCarousel ul").append(indCarousel);
+      		  
+      	 
+    	 
+    	   
+    	   
+       });
+    
+       
+       </script>
+       <style>
+           body{
+         margin-top:20px;}   
+         </style>
+         
+</head>
+<body data-spy="scroll" data-target="#navScroll" data-offset="50">
+
+
+
+ 
+ 
+		<section id="lSection">
+			<div>
+				<ul>
+				<li>(877) 341-7342</li>
+				</ul>
+				<nav style="float: right;">
+					<ol class="breadcrumb">
+					<li><a href="//accelerite.com/blog">Blog</a></li>
+					<li><a href="//accelerite.com/site/support">Support</a></li>
+					<li><a href="//accelerite.com/company/contact-us">Contact</a></li>
+					</ol>
+				</nav>			
+			</div>
+		</section>
+	<header>
+				<div>
+					<a href="//accelerite.com/" title="Return Home">
+							<img src="//accelerite.com/img/logo-accelerite.png" alt="Logo" class="logo_img">
+					</a>
+				</div>
+				<div>
+						<form>
+							<fieldset>
+								<input type="text" id="exampleInputAmount" placeholder="Search">
+							</fieldset>
+							</form>
+				</div>				
+					
+	<nav class="navbar navbar-inverse navbar-fixed-top" id="navScroll">
+	<div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     <!--  <a class="navbar-brand" href="#">Brand</a> -->
+    </div>
+				 <!-- Collect the nav links, forms, and other content for toggling -->
+    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+							<li><a href="#layout">Company</a></li>
+							<li class="active"><a href="#features">Features</a></li>
+					        		<li class="active"><a href="#solutions">Solutions</a></li>
+					        		<li><a href="#products">Products</a></li>
+					        		<li><a href="#industry">Industries</a></li>
+					        		
+					        		
+					    	</ul>      
+					    	</div>
+					    	</div>
+				</nav>
+				
+				<!-- <div class="jumbotron">
+				<div class="container">
+				<h3>Accelarite Launches Aepona</h3>
+				<p>A Complete IoT Platform</p>
+				<button class="btn btn-active">Learn more<small>>></small></button>				
+				
+				</div>
+				</div> -->
+										
+		</header>
+	<div id="layout" class="container-fluid">
+		<section>
+		
+		<div class="carousel slide hidden-xs" data-ride="carousel" id="imgCarousel">
+			<ul class="carousel-indicators">
+			  <!-- <li data-target="#imgCarousel" data-slide-to="0" class="active"></li>
+			  	  <li data-target="#imgCarousel" data-slide-to="1"></li>
+			  	  	  <li data-target="#imgCarousel" data-slide-to="2"></li>
+			  	  	  	  <li data-target="#imgCarousel" data-slide-to="3"></li>
+			  	  	  	  	  <li data-target="#imgCarousel" data-slide-to="4"></li> -->  
+			  
+			  </ul>
+			  
+			  
+		       <div class="carousel-inner">
+			        <div class="item active" ><img class="image" alt="Accelerite slide1" src="images/h1.jpg"></div>
+			        <div class="item"><img class="image" alt="Accelerite slide2" src="images/h2.jpg"></div>	        
+			        <div class="item"><img class="image" alt="Accelerite slide3" src="images/h3.jpg""></div>
+			        <div class="item"><img class="image" alt="Accelerite slide4" src="images/h4.jpg"></div>
+			        <div class="item"><img class="image" alt="Accelerite slide5" src="images/h5.jpg"></div>
+			       </div>		   
+		        <a class="carousel-control left" href="#imgCarousel" data-role="button" data-slide="prev">  
+		       <span class="glyphicon glyphicon-chevron-left"></span></a>
+		       <a class="carousel-control right" href="#imgCarousel" data-role="button" data-slide="next">
+		       <span class="glyphicon glyphicon-chevron-right"></span></a> 
+	         </div>
+
+			<div class="info">
+	
+			<h1>
+			<span>
+			<p style="font-size:35px; font-weight:bold">Accelerite launches Aepona <p style="font-size:25px; line-height:12px; font-weight:bold">A complete IoT Platform</p>
+			<p style="font-size:20px; line-height:12px; padding-top: px;"> </p>
+			</span>
+			</h1>
+			<a href="http://aepona.accelerite.com/">LEARN MORE</a>
+			 
+			
+			</div>
+ -->		</section>
+	 <div id="features">
+  
+        <h2 style="text-align:center;">Features</h2>
+        <div class="row">
+       <div class="col-xs-6">
+        <p>The features module enables the capture and management of features in Drupal. A feature is a collection of Drupal entities which taken together satisfy a certain use-case.Features provides a UI and API for taking different site building components from modules with exportables and bundling them together in a single feature module.</p>
+      </div>
+       <div class="col-xs-6">
+        <p> A feature module is like any other Drupal module except that it declares its components (e.g. views, contexts, CCK fields, etc.) in its .info file so that it can be checked, updated, or reverted programmatically.</p>
+       </div>
+       </div>
+        
+ 		</div>  
+ 		
+ 		
+ 		<div class="title-heading" id="solutions">
+		<h1>Discover Accelerite Solutions</h1>
+		
+			<div id="solution" class="row">
+						<div class=" col-md-3 col-sm-offset-0 col-sm-6 col-xs-offset-2 col-xs-8">
+							<img src="//accelerite.com/images/uploads/site/solutions-001.jpg" alt="foo" class="img-responsive">
+							<div><h5>Cloud Life-Cycle <br>Management</h5>
+							<p>Multi-cloud, multi-virt, hybrid data center Operations Management solution.</p><br><br>
+							<a href="http://convirt.accelerite.com/">Learn More</a><br/><br/></div>
+						</div>
+						<div class="  col-md-3 col-sm-offset-0 col-sm-6 col-xs-offset-2 col-xs-8">						
+							<img src="//accelerite.com/images/uploads/site/solutions-002b.jpg" alt="foo" class="img-responsive">
+							<h5>Complete Endpoint <br>Management</h5>
+							<p>Seamlessly manage all of your enterprise endpoints</p><br><br>
+							<a href="http://radia.accelerite.com/solutions#tab_solution-endpoint-management">Learn More</a><br/><br/>
+						</div>
+						<!-- <div class="clearfix visible-sm"></div> -->
+						<div class=" col-md-3 col-sm-offset-0 col-sm-6 col-xs-offset-2 col-xs-8">					
+							<img src="//accelerite.com/images/uploads/site/solutions-004.jpg" alt="foo" class="img-responsive">				
+							<h5>Cloud-based <br>Disaster Recovery</h5>
+							<p>An effective solution that allows your business to keep operating without interruption.</p><br>
+							<a href="http://rovius.accelerite.com/solutions#tab_solution-dr">Learn More</a><br/><br/>
+						</div>
+						<div class=" col-md-3 col-sm-offset-0 col-sm-6 col-xs-offset-2 col-xs-8">
+							<img src="//accelerite.com/images/uploads/site/solutions-001.jpg" alt="foo" class="img-responsive">
+							<div><h5>Cloud Life-Cycle <br>Management</h5>
+							<p>Multi-cloud, multi-virt, hybrid data center Operations Management solution.</p><br><br>
+							<a href="http://convirt.accelerite.com/">Learn More</a><br/><br/></div>
+						</div>
+						
+					<!-- 	<div class="discover  col-md-3 col-sm-offset-0 col-sm-6 col-xs-offset-2 col-xs-8">						
+							<img src="//accelerite.com/images/uploads/site/solutions-002b.jpg" alt="foo" class="img-responsive">
+							<h5>Complete Endpoint <br>Management</h5>
+							<p>Seamlessly manage all of your enterprise endpoints from a single, unified platform.</p><br><br>
+							<a href="http://radia.accelerite.com/solutions#tab_solution-endpoint-management">Learn More</a><br/><br/>
+						</div>
+						<div class="discover  col-md-3 col-sm-offset-0 col-sm-6 col-xs-offset-2 col-xs-8">					
+							<img src="//accelerite.com/images/uploads/site/solutions-004.jpg" alt="foo" class="img-responsive">				
+							<h5>Cloud-based <br>Disaster Recovery</h5>
+							<p>An effective solution that allows your business to keep operating without interruption in the event of a catastrophic incident.</p><br>
+							<a href="http://rovius.accelerite.com/solutions#tab_solution-dr">Learn More</a><br/><br/>
+						</div> -->
+					
+			</div><!-- row div-->
+		</div>
+			<br/>
+		<div class="title-heading" id="products">
+		<h1>Accelerite Products</h1>
+		</div>
+			<div id="solution" class="row">
+				<div class="col-sm-12 text-center">
+				  <p>Accelerite is a provider of cloud solutions, endpoint management, and mobility</p>
+					<p>to some of largest enterprises in the world.</p>
+				</div>
+				<div class="discover col-xs-offset-2 col-xs-8 ">
+					<img src="//accelerite.com/images/uploads/site/solutions-004.jpg" class="img-responsive pull-right">
+					<div><h5>Cloud Life-Cycle <br>Management</h5>
+					<p>Multi-cloud, multi-virt, hybrid data center Operations Management solution.</p><br><br>
+					<a href="http://convirt.accelerite.com/">Learn More</a><br/><br/></div>
+					</div>
+					<div class="discover  col-xs-offset-2  col-xs-8">						
+					<img src="//accelerite.com/images/uploads/site/solutions-002b.jpg" class="img-responsive pull-right">
+					<h5>Complete Endpoint <br>Management</h5>
+					<p>Seamlessly manage all of your enterprise endpoints with the final timeline</p><br><br>
+					<a href="http://radia.accelerite.com/solutions#tab_solution-endpoint-management">Learn More</a><br/><br/>
+					</div>
+					<!-- <div class="clearfix visible-sm"></div> -->
+					<div class="discover  col-xs-offset-2  col-xs-8 ">					
+					<img src="//accelerite.com/images/uploads/site/solutions-001.jpg" class="img-responsive pull-right">				
+					<h5>Mobility - based<br>Services</h5>
+					<p>An effective solution that allows business to keep operating without interruption.</p><br>
+					<a href="http://rovius.accelerite.com/solutions#tab_solution-dr">Learn More</a><br/><br/><br/>
+					</div>
+					
+					
+					<!-- 	<div class="discover  col-md-3 col-sm-offset-0 col-sm-6 col-xs-offset-2 col-xs-8">						
+							<img src="//accelerite.com/images/uploads/site/solutions-002b.jpg" alt="foo" class="img-responsive">
+							<h5>Complete Endpoint <br>Management</h5>
+							<p>Seamlessly manage all of your enterprise endpoints from a single, unified platform.</p><br><br>
+							<a href="http://radia.accelerite.com/solutions#tab_solution-endpoint-management">Learn More</a><br/><br/>
+						</div>
+						<div class="clearfix"></div>
+						<div class="discover  col-md-3 col-sm-offset-0 col-sm-6 col-xs-offset-2 col-xs-8">					
+							<img src="//accelerite.com/images/uploads/site/solutions-004.jpg" alt="foo" class="img-responsive">				
+							<h5>Cloud-based <br>Disaster Recovery</h5>
+							<p>An effective solution that allows your business to keep operating without interruption in the event of a catastrophic incident.</p><br>
+							<a href="http://rovius.accelerite.com/solutions#tab_solution-dr">Learn More</a><br/><br/>
+						</div> -->
+					
+			</div><!-- row div-->
+			
+			</br>
+					<div class="title-heading" id="industry">
+		 				<h1>We work in your industry</h1>
+		 			</div>
+					<div class="row industry">
+					
+					<!-- Tab list -->
+					<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#health" data-toggle="tab" role="tab">Health Care</a></li>
+					<li role="presentation"><a href="#finance" data-toggle="tab" role="tab">Financial Services</a></li>
+					<li role="presentation"><a href="#legal" data-toggle="tab" role="tab">Legal Services</a></li>						
+					</ul>					
+					<div class="tab-content">
+					<div id="health" class="tab-pane active" role="tabpanel">
+					<pre>
+					 
+						    Find out how Accelerite software, mobility, and cloud solutions help IT teams enable and secure the modern healthcare enterprise.
+						    
+						    Health care Enterprises create and operates a process through which interoperability of health care IT systems can be improved.
+							
+							The group gathers case requirements, identifies available standards, and develops technical guidelines which manufacturers can implement.
+							
+							HE also stages "connectathons" and "interoperability showcases" in which vendors assemble to demonstrate the interoperability of their products
+					
+					
+					</pre>
+					</div>
+					<div id="finance" class="tab-pane" role="tabpanel">
+					<pre>
+					    Explore cloud and endpoint management solutions that help financial services companies optimize their IT resources.
+						   
+						    Investors today are mobile, social, and connected, and they expect responsive 1-to-1 relationships.
+						   
+						     With 55% of Investors saying they want to collaborate with their Financial Advisors, and $2 trillion in assets set to pass on to the next generation, the dynamic is changing. 
+						   
+						     Financial Services Cloud has the powerful tools you need to stay connected with clients in real-time, nurture deeper relationships, and take your productivity, and business growth, to the next level.
+					
+					
+					</pre>
+					</div>
+					<div id="legal" class="tab-pane" role="tabpanel">
+					<pre>
+							Cloud and endpoint management solutions that help legal firms maximize IT resources, protect customer data and deliver professional legal services.
+							
+							Lawyers may find significant differences between the security and service features offered in cloud-based products developed specifically for the legal community and those developed for the general public
+							
+							Time, Billing and Invoice products use cloud computing to help streamline the billing function, so the lawyer operating on a billable-hour basis is not spending a significant amount of time logging work for each client
+							
+							Electronic Signature products provide secure, web-based electronic signatures and in some cases will store signed documents online for access by both parties
+					
+					
+					
+					</pre>
+					</div>
+					
+					
+					
+					</div>
+						
+					</div><!-- row div -->				
+
+
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Cloud Life-Cycle Management</h3></div>
+					<div class="panel-body">
+						<pre>
+						CloudPlatform
+							Public or private cloud solution with ease of use and workload orchestration.
+		
+						CloudPortal Business Manager
+							IT-as-a-Service with provisioning, billing, metering and user management.
+		
+						ConVirt
+							Enterprise self-service solution for hybrid clouds.
+		
+						rCloud
+							Cloud-based disaster recovery - Seamless recovery in minutes.
+		
+						Rovius
+							Versatile, enterprise-grade disaster recovery solution.
+						</pre>			
+					</div>
+				<div class="panel-footer"> 
+				<button class="btn btn-default" data-target="#cloudModal" data-toggle="modal">Read More<small>>></small></button>			
+				</div>
+				</div>
+		
+		        <div class="page" id="typography">
+        <div class="container">
+        
+        <h2>Public Museum Survey<small>(PMS)</small></h2>
+        <p class="lead text-center text-capitalize">Available now: <mark>The data catalog!</mark></p>
+        <p>Our New Data Catalog keeps museum survey data taken care by <abbr title="Counsel of Administrative Survey" class="initialism">CAMS</abbr> like availability of researchers,
+         developers and interested members of the public who want to dig deeper. <ins>Read More...</ins></p> 
+        <div class="row">
+	        <div class="col-lg-12">	        
+		        <div class="row">		        
+			        <div class="col-sm-6">
+			        <div class="input-group">
+			        	
+				        <input type="search" class="form-control" placeholder="Enter Member type....."/>
+				        <span class="input-group-addon">Search</span>		        
+			        </div>
+			      <ul class="list-group">
+			        <li class="list-group-item">Researchers<span class="badge">14</span></li>
+			        <li class="list-group-item">Developers<span class="badge">8</span></li>
+			        <li class="list-group-item" >Scholars<span class="badge">12</span></li>
+			        <li class="list-group-item list-group-item-success">Interested Members<span class="badge">10</span></li>
+			        </ul> 
+			       <!--  <div class="list-group">
+						  <a href="#" class="list-group-item active">
+						    <h4 class="list-group-item-heading">Researchers</h4>
+						    <p class="list-group-item-text">someone who conducts research in an organized and systematic manner</p>
+						  </a>
+						  <a href="#" class="list-group-item">
+						    <h4 class="list-group-item-heading">Developers</h4>
+						    <p class="list-group-item-text">a person or thing that develops something.</p>
+						  </a>
+						  <a href="#" class="list-group-item">
+						    <h4 class="list-group-item-heading">Scholars</h4>
+						    <p class="list-group-item-text">a specialist in a particular branch of study, especially the humanities.</p>
+						  </a>
+						  <a href="#" class="list-group-item">
+						    <h4 class="list-group-item-heading">Interested Members</h4>
+						    <p class="list-group-item-text">A person who wants to take initiative with the organization research going on</p>
+						  </a>
+					</div> -->
+			        <!--  <ol>
+			        <li>Researchers</li>
+			        <li>Developers</li>
+			        <li>Scholars</li>
+			        <li>Interested Members</li>
+			        </ol>  -->
+			            
+			         <dl class="dl-inline"><dt>Reserachers</dt><dd>someone who conducts research in an organized and systematic manner</dd>
+			            <dt>Developers</dt><dd>a person or thing that develops something.</dd>
+			            <dt>Scholars</dt><dd>a specialist in a particular branch of study, especially the humanities.</dd>
+			            <dt>Intersted Members</dt><dd>A person who wants to take initiative with the organization research going on</dd>
+			            </dl> 
+			        </div>
+			        <div class="col-sm-6">
+			        <table class="table table-bordered table-striped table-hover table-responsive">
+			        <thead>
+			        <tr><td>Sr. No.</td><td>Title</td><td>Count</td></tr></thead>
+			        <tbody>
+			        <tr class="active"><td>1</td><td>Researchers</td><td>1570</td></tr>
+			        <tr class="success"><td>2</td><td>Developers</td><td>850</td></tr>
+			        <tr class="warning"><td>3</td><td>Scholars</td><td>1150</td></tr>
+			        <tr class="danger"><td>4</td><td>Interested Members</td><td>1320</td>    	        
+			        </tr>
+			        </tbody>
+			        </table>
+			        </div>
+			        </div>		        
+			        </div>		             
+		        </div>		        
+	        </div>   
+	        
+        </div>
+       <div class="page container" id="code_tags">
+      	
+      	<h3>A Beginner's jQuery Code</h3>
+      	
+      	<p style="border:1px solid aqua; height:250px;">
+      	
+      	<code>&lt;script&gt;<br/>
+      	$(function(){<br/>
+        
+        	<var>str</var>="Hello World";<br/>
+        	document.write(<var>str</var>);<br/>
+        
+        });<br/>           
+        &lt;/script&gt;      	    	
+      	</code>       	
+      	<br/>
+        To Execute this code, save it using shortcut key <kbd>ctrl+s</kbd> and refresh your browser using function key <kbd>F5</kbd>
+        <br/>        	
+      	Output is:
+        <br/>
+        <samp>Hello World</samp>
+      	
+      	</p>
+      
+      <!-- 	<pre>
+        
+        for text in pre formatting
+        
+        it considers white spaces and newline character
+        
+        </pre> -->
+      	
+      	
+        
+        </div>
+
+        
+        <div class="page" id="context_text">
+	        <div class="container">
+	        <p class="h3 text-center">Predefined contextual color classes - text and Background</p>
+  				
+ 				 
+ 				 <p class="text-primary">This color indicates visual weight for the text as primary importance</p>
+ 				 <p class="text-info">Informative change or action is observed</p>
+ 				 <p class="text-warning">Warning signs that ask for attention</p>
+ 				 <p class="text-success">Success/positive behavior is observed through this text</p>				 
+  				<p class="text-danger">This color is used to indicates a dangerous or potentially negative action</p>
+  				<p class="text-muted">Here the text is muted</p>
+  				
+  				  <h3>About the background style classes</h3>
+  				  <p class="bg-info">Informative change or action is observed</p>
+					  <p class="bg-primary">This color indicates visual weight to show the primary importance</p>
+					  <p class="bg-warning">Warning signs that ask for attention.</p>
+					  <p class="bg-success">Success/positive behavior is observed through this color</p>				  
+					  <p class="bg-danger">This color is used to indicates a dangerous or potentially negative action</p>
+	        </div>
+	       </div>
+        
+        <div class="page" id="quotes">
+	        <div class="container">
+	        <h2>Quotations</h2>
+		        <div class="row">
+			      	<blockquote class="col-sm-6 pull-right blockquote-reverse">		       
+			        <span>All life demands struggle. Those who have everything given to them become lazy, selfish, and insensitive to the real values of life.</span>
+			        <span> The very striving and hard work that we so constantly try to avoid is the major building block in the person we are today.</span>
+			        
+			       
+			        <!-- small can also work -->
+			        <footer class="customer">Pope Paul VI</footer>
+			        </blockquote>
+			     <br/>
+		        </div>
+	        
+	        </div>   
+	         
+	        <div class="container" id="addresses">
+	          	<div class="row">
+	          		<div class="col-sm-6">
+	          		
+	          		<address>
+	          		<strong>Persistent Systems Ltd.</strong><br>
+	          		Plot No:39, Phase I,<br>
+	          		Rajiv Gandhi InfoTech Park,<br>
+	          		Hinjewadi, Pune 411057<br>
+	          		<abbr title="phone">t:</abbr> +91 (20) 6798 0000          		
+	          		
+	          		</address>
+	          		
+	          		<address>
+	          		<strong>Email:</strong><br>
+	          		<a href="mailto:#">info@persistent.com</a>          		
+	          		
+	          		</address>
+	          		
+	          		
+	          		</div>
+	          	
+	          	
+	          	</div>
+	          
+	          
+	        </div>
+        </div>
+          <div class="container text-center" style="display:none;" id="conDiv">
+          <div class="btn-group">
+	        <button class="btn btn-primary disabled">f</button> 
+	        <button class="btn btn-active"><img src="images/tweet.jpg" style="border-radius:50%;" width="20px" height="20px"/>&nbsp;Tweet</button>
+	        <button class="btn btn-danger">in</button>
+	        </div>
+	        </div>
+         <div class="container text-left" style="display:none;" id="fbDiv">
+         <form class="form-group">
+	       <fieldset>
+	       <legend>Feedback Form</legend>
+	       <label for="txtUser" class="control-label">Email Id:</label><input type="text" id="txtUser" class="form-control" value="test@gmail.com" readonly/>
+	      <!--  <p class="form-control-static">test@gmail.com</p> -->
+	       <label for="txtComment" class="control-label">Comments:</label><textarea id="txtComment" class="form-control" autofocus></textarea>
+	       <label>Do you want to have updates from our site?</label>
+	       <div class="has-success"><label class="control-label"><input type="radio" name="update" value="yes" checked disabled>Yes</label></div>
+	       <div><label class="control-label"><input type="radio" name="update" value="No" disabled>No</label></div>
+	       <button id="submit" class="btn btn-default">Submit</button>
+	       </fieldset>    
+	       
+	        </form> 
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	    <!--     <form class="form-group">
+	       <fieldset>
+	       <legend>Feedback Form</legend>
+	       <label for="txtUser" class="control-label">Email Id:</label><input type="text" id="txtUser" class="form-control"/>
+	       <label for="txtComment" class="control-label">Comments:</label><textarea id="txtComment" class="form-control"></textarea>
+	       <label class="control-label">Do you want to have updates from our site?</label>
+	       <div class="checkbox"><label class="control-label"><input type="radio" name="update" value="yes">Yes</label></div>
+	       <div class="checkbox"><label class="control-label"><input type="radio" name="update" value="No">No</label></div>
+	       <button id="submit" class="btn btn-default">Submit</button>
+	       </fieldset>    
+	       
+	        </form> -->
+	        </div>
+        <footer>
+       <div class="content container-fluid">
+       <div class="row">
+        <div class="col-sm-3">&copy;Copyright Information</div>
+         <div class="col-sm-9">
+	        	 <nav class="navbar navbar-default"> 
+	        
+	        	<ul class="nav navbar-nav navbar-right">
+	        	<li><a href="#" id="fbLink">Feedback</a></li>
+	        		<li><a href="#" id="conLink">Contact Us</a></li>
+	        	
+	        	</ul>
+	     
+	       
+	        	</nav>
+	       </div>
+        </div>
+        
+         </div> 
+        
+        </footer>
+<!-- Modal -->
+
+				
+				<div class="modal fade" id="cloudModal" role="dialog">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+				      <div class="modal-header">
+				      <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+				       <h4 class="modal-title">Accelerite Finalizes Acquisition of Citrix CloudPlatform and CloudPortal Business Manager</h4>
+				      </div>
+				      <div class="modal-body">
+				      <pre>
+				         Accelerite a provider of infrastructure software for cloud, mobility, IoT and endpoint management, announced today it has closed the acquisition of the CloudPlatform and CloudPortal Business Manager products from Citrix Systems, Inc.
+
+						With the addition of CloudPlatform, powered by Apache CloudStack for cloud orchestration and CloudPortal Business Manager for cloud services front-end, Accelerite offers a complete turn-key cloud orchestration platform for enterprises and telecom providers to rapidly deliver private and public clouds and expand capacity on-demand.
+
+					"CloudPlatform and the CloudPortal Business Manager product lines further strengthen our innovative end-to-end cloud solutions for enterprise and telecommunications customers as they migrate applications and data to public and private cloud environments," said Nara Rajagopalan, CEO of Accelerite. "We are protecting and enhancing customers' investment in these products by delivering world-class technical support, investing further in product development and offering new capabilities unique to the enterprise product. We remain committed to the open source community and will continue to make contributions."
+
+					Additional product offerings in the Accelerite cloud infrastructure software portfolio include ConVirt for multi-cloud, multi-virtualization, hybrid cloud self-service management, rCloud for cloud based Disaster-Recover-as-a-Service and Rovius for enterprise-grade disaster recovery.
+					</pre>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-primary">Save changes</button>
+				      </div>
+				      </div>
+				      </div>
+				    </div>
+				  
+
+
+
+</div><!-- Layout -->
+
+
+ <script type="text/javascript">
+        $(function(){
+        	$("#fbLink").click(function(event){
+        		event.preventDefault();
+        		$("#conDiv").hide();
+        		$("#fbDiv").show(1000);
+        	});
+        	$("#conLink").click(function(){
+        		event.preventDefault();
+        		$("#fbDiv").hide();
+        		$("#conDiv").show(1000);
+        	});
+        });
+        
+        
+        </script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,89 @@
+.jumbotron{
+background: url('images/h1.jpg');
+color:green;
+font-weight:bolder;
+background-size:100%;
+}
+.center_content{
+text-align:center}
+.title-heading{
+text-align:center;}
+.work_title{
+font-weight:bolder;}
+section h1{
+clear:both;}
+ header{
+margin-top:50px;}
+header input{
+display:inline-block;
+width:350px;}
+@media (min-width:758px){
+.info { 
+  color:#fff;
+  width:100%;
+ position:absolute;
+ z-index:2;
+ top:50%;
+ left:10%;
+}	
+.carousel{
+ z-index:1;
+  margin-bottom: 60px;
+  width:100%;
+}
+}
+.carousel img {
+	width:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 500px;
+}
+
+
+
+nav{
+clear:both;}
+
+/* Since positioning the image, we need to help out the caption */
+
+
+
+.image{
+width:100%;}
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color:#555;
+}
+
+.info-head {
+    padding: 1px 0;
+    background-color: #414042;
+    color: #a7a9ac;
+    line-height: 24px;
+}
+#solutions{
+	text-align:center;
+	
+	
+background-color:#D2E49D;
+ background-image:linear-gradient(to bottom,#D2E49D,#AECD50;)
+  }
+.discover{
+	text-align:center;
+	border-bottom:1px dashed #ff00dd;
+background-color:#D2E49D;
+ background-image:linear-gradient(to bottom,#D2E49D,#AECD50;)
+  }
+#features{
+background-color:#F5F6CE;
+background-image:linear-gradient(to bottom,#F5F6CE ,#D8F781;)
+ }
+
+
+.industry{
+background-color:#F6F5CE;
+background-image:linear-gradient(to bottom,#F6F5CE ,#F7D881;)
+ }
+
