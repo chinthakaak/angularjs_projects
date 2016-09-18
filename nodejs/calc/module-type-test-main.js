@@ -11,4 +11,6 @@ var calc3 = require('./calc-moreops.js');
 console.log('two exports '+ calc3.mul(1,3) + '  ' + calc3.add(3,1));
 
 var calc4 = require('./calc-package-mod');
-console.log('module inside a folder with package.json : ' + calc4.add(1,3));
+console.log('module inside a folder with package.json module.exports: ' + calc4.add1(1,3));
+console.log('module inside a folder with package.json exports: ' + calc4.add2(2,3));
+console.log('module inside a folder with package.json exports: ' + calc4.add3(20,3));
