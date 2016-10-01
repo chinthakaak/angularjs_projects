@@ -1,0 +1,1 @@
+browserify index.js --standalone APP -o bundle.js --debug

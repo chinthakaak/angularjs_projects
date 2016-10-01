@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body>
+	<button type="Submit" onclick="invoke1()">Press Invoke1</button>
+	<button type="Submit" onclick="invoke2()">Press Invoke2</button>
+	
+		
+	<script type="text/javascript" src="bundle.js">
+	
+	</script>
+	<script type="text/javascript">
+		function invoke1() {
+			console.log('Invoke1')
+			var emitter = APP.LSNR.getEmitter();
+			emitter.on("someEvent", function(data) {
+				console.log(data)
+			});
+		}
+	</script>
+	
+	<script type="text/javascript">
+		function invoke2() {
+			console.log('Invoke2')
+
+			fetch("")
+			.then(function(){
+				var emitter = APP.LSNR.getEmitter();
+				emitter.on("someEvent", function(data) {
+					console.log("promises "+data)
+				});
+			});	
+		}
+	</script>
+
+</body>
+</html>
