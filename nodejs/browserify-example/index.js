@@ -1,0 +1,1 @@
+exports.bm = require('./bmodule');

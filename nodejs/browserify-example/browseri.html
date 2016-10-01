@@ -1,0 +1,18 @@
+<html>
+<body>
+	<script type="text/javascript" src="bundle.js"></script>
+	
+	<script type="text/javascript">
+		function emitme() {			
+			// document.write("<br></br>");
+			// document.write("emitme");
+			document.getElementById("sp").innerHTML ="test"
+			//var j = require('eventing.js')
+			var mm = BRM.bm.join();
+		}
+	</script>
+	<button id="emitme" name="emitme" type="submit" onclick="emitme()">EmitMe
+	</button>
+	<span id="sp"></span>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+	"name" : "eveting",
+	"scripts" : {
+		"start" : "echo start",
+		"browserify":"browserify index.js --standalone BRM --outfile bundle.js --debug"
+	}
+}
