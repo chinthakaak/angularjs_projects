@@ -4,5 +4,5 @@ var obj = new EventEmitter();
 module.exports = obj;
 
 setInterval(function() {
-    obj.emit("someEvent", "test");
+    obj.emit("error", "test");
 }, 1000);
