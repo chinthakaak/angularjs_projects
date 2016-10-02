@@ -6,6 +6,8 @@
 <body>
 	<button type="Submit" onclick="invoke1()">Press Invoke1</button>
 	<button type="Submit" onclick="invoke2()">Press Invoke2</button>
+	<button type="Submit" id="btn">Press JQuery</button>
+	<button type="Submit" id="btn2">Press JQuery Catch</button>
 	
 		
 	<script type="text/javascript" src="bundle.js">
@@ -15,7 +17,7 @@
 		function invoke1() {
 			console.log('Invoke1')
 			var emitter = APP.LSNR.getEmitter();
-			emitter.on("someEvent", function(data) {
+			emitter.on("error", function(data) {
 				console.log(data)
 			});
 		}
@@ -25,15 +27,44 @@
 		function invoke2() {
 			console.log('Invoke2')
 
-			fetch("")
+			fetch("http://www.google.com")
 			.then(function(){
 				var emitter = APP.LSNR.getEmitter();
-				emitter.on("someEvent", function(data) {
+				emitter.on("error", function(data) {
 					console.log("promises "+data)
 				});
 			});	
 		}
 	</script>
+	
+	<script>
+		document.querySelector('#btn').onclick = function () {
+			console.log('InvokeJQuery')
+			fetch("http://www.google.com")
+			.then(function(){
+				var emitter = APP.LSNR.getEmitter();
+				emitter.on("error", function(data) {
+					console.log("promises jquery "+data)
+				});
+			});
+		}
+	</script>
+	
+		<script>
+		document.querySelector('#btn2').onclick = function () {
+			console.log('InvokeJQuery')
+			fetch("http://www.google.com")
+			.then(function(){
+				var emitter = APP.LSNR.getEmitter();
+				emitter.on("error", function(data) {
+					console.log("promises jquery with catch "+data)
+				});
+			}).catch(function(error) {
+			      console.log(error);
+			});
+		}
+	</script>
+
 
 </body>
 </html>
